@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+html, body {
+    height: 100vh; /* Set height to 100% of the viewport height */
+    overflow: hidden; /* Prevent scrolling */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Main Content */
+.main-content {
+    flex-grow: 1; /* Allow main content to fill available space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 2rem;
+}
+
+.main-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.main-content p {
+    font-size: 1.25rem;
+    max-width: 600px;
+}
+
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+
+    .main-content {
+        /* Add padding to prevent content from going under fixed header/footer */
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
+
+    .main-content h1 {
+        font-size: 2rem;
+    }
+
+    .main-content p {
+        font-size: 1rem;
+    }
+}

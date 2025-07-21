@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Portfolio</title>
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+
+<div id="nav-placeholder"></div>
+
+<main class="main-content">
+  <h1>Hi, I’m a Web Developer.</h1>
+  <p>I build modern, minimal, and accessible websites.</p>
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script>
+  // 加载导航栏
+  fetch('html/nav.html')
+          .then(res => res.text())
+          .then(data => {
+            document.getElementById('nav-placeholder').innerHTML = data;
+          });
+
+  // 加载页脚
+  fetch('html/footer.html')
+          .then(res => res.text())
+          .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+          });
+</script>
+
+</body>
+</html>
