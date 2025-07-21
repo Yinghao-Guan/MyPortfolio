@@ -11,42 +11,123 @@ body {
 }
 
 /* Main Content */
+/* 外层容器：负责整体居中和页面留白 */
 .main-content {
-    flex-grow: 1; /* Allow main content to fill available space */
+    flex-grow: 1;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 0 2rem;
+    justify-content: center; /* 水平居中 */
+    align-items: stretch;
+
+    /* * ↓↓↓ 现在调整这个值，应该能看到效果了！↓↓↓
+     * 这是内容块与浏览器窗口边缘的最小距离
+     */
+    padding: 10% 0; /* 例如：上下 5rem, 左右 10% 的留白 */
 }
 
-.main-content h1 {
+/* 中间包裹层：负责实现对角线布局 */
+.content-wrapper {
+    display: flex;
+    gap: 8rem; /* 控制左右两部分之间的距离 */
+    width: 80%;
+}
+
+/* 左侧内容块：在包裹层中向下对齐 */
+.about-left {
+    max-width: 400px;
+    align-self: flex-end; /* 这是实现对角线的关键！*/
+}
+
+/* 右侧内容块：在包裹层中向上对齐 */
+.about-right {
+    max-width: 400px;
+    align-self: flex-start; /* 这是实现对角线的关键！*/
+}
+
+.vertical-title{
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    text-orientation: mixed;
     font-size: 3rem;
     font-weight: 700;
-    margin-bottom: 1rem;
+    margin-bottom:  2rem;
 }
 
-.main-content p {
-    font-size: 1.25rem;
-    max-width: 600px;
+.about-left p{
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.about-right p{
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.about-right .email {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 2rem 0;
+}
+
+.resume-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    color: var(--text-color);
+    transition: color 0.3s ease-in-out;
+    text-decoration: none; /* 取消整个链接的下划线 */
+}
+
+.resume-link .link-text {
+    text-decoration: underline; /* 只给文字加下划线 */
+}
+
+.resume-link:hover {
+    color: var(--primary-color);
 }
 
 
 /* Responsive Design Adjustments */
+/* Responsive Design Adjustments */
 @media (max-width: 768px) {
 
     .main-content {
-        /* Add padding to prevent content from going under fixed header/footer */
-        padding-top: 5rem;
-        padding-bottom: 5rem;
+        /* 1. 将内容垂直堆叠 */
+        flex-direction: column;
+
+        /* 2. 垂直和水平居中堆叠后的项目 */
+        justify-content: center;
+        align-items: center;
+
+        /* 3. 使用为移动端优化的、更小的对称内边距 */
+        padding: 4rem 2rem;
+
+        /* 4. (可选) 也可以适当减小项目之间的间距 */
+        gap: 3rem;
     }
 
-    .main-content h1 {
-        font-size: 2rem;
+    /* 5. 重置桌面端的对角线对齐设置，以适应新的垂直布局 */
+    .about-left,
+    .about-right {
+        align-self: auto;
+        /* (可选) 您可能希望在移动端让所有文本都居中显示 */
+        text-align: center;
     }
 
-    .main-content p {
-        font-size: 1rem;
+    /* (可选) 在移动端将垂直标题变回水平，更易阅读 */
+    .vertical-title {
+        writing-mode: horizontal-tb;
+        transform: none;
+        margin-bottom: 1.5rem;
+    }
+
+    /* --- 使用 order 属性调整移动端显示顺序 --- */
+    .about-right {
+        /* 设置为 1，将排在 order 值为 2 的元素前面 */
+        order: 1;
+    }
+    .about-left {
+        /* 设置为 2，将排在 order 值为 1 的元素后面 */
+        order: 2;
     }
 }
