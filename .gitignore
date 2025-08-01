@@ -1,0 +1,41 @@
+# 操作系统文件
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Icon?
+Desktop.ini
+
+# Node.js 依赖（如果你用了构建工具或 npm）
+node_modules/
+
+# VS Code 编辑器设置（可选忽略）
+.vscode/
+
+# Mac 特有
+.AppleDouble
+.LSOverride
+
+# Windows 特有
+$RECYCLE.BIN/
+
+# 构建产物（如你有构建步骤或打包）
+dist/
+build/
+
+# 缓存文件夹（如某些打包器或工具生成）
+.cache/
+.tmp/
+
+# 日志文件
+*.log
+
+# 临时文件（编辑器、系统可能会产生）
+*.swp
+*.swo
+*.bak
+*.tmp
+*.orig
+
+# 环境变量文件（如果有）
+.env
+.env.*
