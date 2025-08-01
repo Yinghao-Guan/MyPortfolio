@@ -158,6 +158,52 @@
                 text-align: center;
             }
         }
+
+        /* --- 新增：按钮与链接样式 --- */
+
+        .action-links {
+            /* 与下方链接组的间距 */
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem; /* 两个按钮之间的间距 */
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.7rem 1.8rem; /* 按钮内边距，控制大小 */
+            border-radius: 8px; /* 圆角大小 */
+            text-decoration: none;
+            font-weight: bold; /* 字体加粗 */
+            font-size: 0.9rem;
+            transition: all 0.3s ease; /* 平滑过渡效果 */
+            border: 2px solid transparent; /* 边框，默认透明 */
+        }
+
+        /* 主要按钮样式 (实心) */
+        .btn {
+            background-color: #002fa7; /* 背景色 - 深灰色 */
+            color: #F7F7F5; /* 文字颜色 - 白色 */
+        }
+
+        .btn:hover {
+            background-color: #002A9A; /* 一个比原来稍微深一点的蓝色 */
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 次要按钮样式 (描边) */
+        .btn.btn-secondary {
+            background-color: transparent; /* 背景透明 */
+            color: #002fa7; /* 文字颜色 - 深灰色 */
+            border: 2px solid #002fa7; /* 边框为深灰色 */
+        }
+
+        .btn.btn-secondary:hover {
+            background-color: #002fa7; /* 鼠标悬停时背景填充 */
+            color: #F7F7F5; /* 文字变白 */
+        }
     </style>
 </head>
 <body>
@@ -177,11 +223,15 @@
 <main class="main-content">
     <h1>Hi, I’m a Web Developer.</h1>
     <p>I build modern, minimal, and accessible websites.</p>
+    <div class="action-links">
+        <a href="#" class="btn" target="_blank">查看简历</a>
+        <a href="mailto:peter@peterguan.com" class="btn btn-secondary">联系我</a>
+    </div>
 </main>
 
 <footer class="footer">
     <div class="copyright">
-        © 2025 Your Name. All rights reserved.
+        © 2025 My Name. All rights reserved.
     </div>
     <div class="social-icons">
         <a href="#" aria-label="GitHub Profile">
