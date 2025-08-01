@@ -1,57 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Personal Portfolio</title>
-  <link rel="stylesheet" href="css/index.css">
-  <link rel="stylesheet" href="css/common.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peter Guan</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/common.css">
 </head>
 <body>
 
 <div id="nav-placeholder"></div>
 
 <main class="main-content">
-  <div class="about-left">
-    <h2 class="vertical-title">About<br>Me</h2>
-    <p>
-      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam lobortis facilisis sem.
-      Nullam nec mi et neque pharetra sollicitudin. Praesent imperdiet mi nec ante. Donec
-      45 ullamcorper, felis non sodales commodo, lectus velit ultrices augue, a dignissim nibh
-      lectus placerat pede. Vivamus nunc nunc, molestie ut, ultricies vel, semper in, velit.
-    </p>
-  </div>
-
-  <div class="about-right">
-    <p>Hello, I'm <strong>Peter</strong><br>
-      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam lobortis facilisis sem.
-      Nullam nec mi et neque pharetra sollicitudin.
-    </p>
-    <p class="email"><strong>peter@peterguan.com</strong></p>
-    <a href="#" class="resume-link">
-      <span class="link-text">See my Resume</span>
-      <span class="arrow">▶</span>
-    </a>
-  </div>
+    <h1>Hi, I’m a Web Developer.</h1>
+    <p>I build modern, minimal, and accessible websites.</p>
+    <div class="action-links">
+        <a href="#" class="btn" target="_blank">查看简历</a>
+        <a href="mailto:peter@peterguan.com" class="btn btn-secondary">联系我</a>
+    </div>
 </main>
+
+<!--
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam lobortis facilisis sem.
+Nullam nec mi et neque pharetra sollicitudin. Praesent imperdiet mi nec ante. Donec
+45 ullamcorper, felis non sodales commodo, lectus velit ultrices augue, a dignissim nibh
+lectus placerat pede. Vivamus nunc nunc, molestie ut, ultricies vel, semper in, velit.
+-->
 
 
 <div id="footer-placeholder"></div>
 
 <script>
-  // 加载导航栏
-  fetch('html/nav.html')
-          .then(res => res.text())
-          .then(data => {
+    // 加载导航栏
+    fetch('html/nav.html')
+        .then(res => res.text())
+        .then(data => {
             document.getElementById('nav-placeholder').innerHTML = data;
-          });
+        });
 
-  // 加载页脚
-  fetch('html/footer.html')
-          .then(res => res.text())
-          .then(data => {
+    // 加载页脚
+    fetch('html/footer.html')
+        .then(res => res.text())
+        .then(data => {
             document.getElementById('footer-placeholder').innerHTML = data;
-          });
+        });
 </script>
 
 </body>
