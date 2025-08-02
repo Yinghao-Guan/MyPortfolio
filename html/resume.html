@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <link rel="stylesheet" href="/css/resume.css">
+    <link rel="stylesheet" href="/css/common.css">
+</head>
+<body>
+
+<div id="nav-placeholder"></div>
+
+<main class="resume-container">
+    <header class="resume-main-header">
+        <span class="title-decorator"></span>
+        <h1>Resume</h1>
+    </header>
+
+    <div class="experience-header">
+        <h2>Experience</h2>
+        <a href="#" class="download-button">DOWNLOAD CV</a>
+    </div>
+
+    <section class="experience-card">
+        <div class="experience-details">
+            <p class="date-range">2035 - Present</p>
+            <p class="job-position">SENIOR WEB DEVELOPER</p>
+            <p class="company-info">Tech Solutions Inc.</p>
+            <p class="company-info">San Francisco, CA</p>
+        </div>
+        <div class="experience-description">
+            <p>
+                I'm a paragraph. Click here to add your own text and edit me. It's easy. Just click “Edit Text” or double click me to add your own content and make changes to the font.
+            </p>
+        </div>
+    </section>
+
+    <section class="experience-card">
+        <div class="experience-details">
+            <p class="date-range">2033 - 2035</p>
+            <p class="job-position">MID-LEVEL DEVELOPER</p>
+            <p class="company-info">Creative Minds LLC</p>
+            <p class="company-info">New York, NY</p>
+        </div>
+        <div class="experience-description">
+            <p>
+                This is another paragraph describing your role and achievements at this company. Customize it to reflect your experience and skills.
+            </p>
+        </div>
+    </section>
+
+    <section class="experience-card">
+        <div class="experience-details">
+            <p class="date-range">2031 - 2033</p>
+            <p class="job-position">JUNIOR DEVELOPER</p>
+            <p class="company-info">Startup Hub</p>
+            <p class="company-info">Austin, TX</p>
+        </div>
+        <div class="experience-description">
+            <p>
+                Describe your initial role in the industry. Mention key learnings and contributions, even if they seem small. It shows growth over time.
+            </p>
+        </div>
+    </section>
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script>
+
+    fetch('nav.html')
+        .then(res => res.text())
+        .then(data => {
+            document.getElementById('nav-placeholder').innerHTML = data;
+        });
+
+    fetch('footer.html')
+        .then(res => res.text())
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        });
+</script>
+
+</body>
+</html>
