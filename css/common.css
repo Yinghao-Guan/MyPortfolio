@@ -79,6 +79,20 @@ html, body {
 .footer .social-icons {
     display: flex;
     gap: 1.5rem;
+    align-items: center;
+}
+
+.footer-email-link {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    text-decoration: none;
+    opacity: 0.75;
+    transition: all 0.3s ease-in-out;
+}
+
+.footer-email-link:hover {
+    color: var(--primary-color);
+    opacity: 1;
 }
 
 .footer .social-icons a {
