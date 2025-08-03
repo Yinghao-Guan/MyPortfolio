@@ -6,15 +6,16 @@ body {
 }
 
 /* --- 主要内容容器 --- */
+.resume-bg-container {
+    background-color: #EDEAE6;
+    padding: 100px 0;
+
+}
+
 .resume-container {
     max-width: 980px; /* 限制最大宽度 */
     margin: 0 auto; /* 改为0 auto，顶部间距由header控制 */
-    padding: 0 100px;
-    background-color: #EDEAE6;
-}
-
-.resume-bg-container {
-    padding-top: 7rem;
+    padding: 0 40px;
 
 }
 
@@ -74,7 +75,7 @@ body {
 .experience-card {
     background-color: #FFFFFF;
     padding: 40px;
-    border-radius: 8px;
+    /*border-radius: 8px;*/
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     display: flex;
     gap: 40px;
@@ -129,19 +130,31 @@ body {
 
 /* --- 响应式设计：小屏幕设备 --- */
 @media (max-width: 768px) {
-    .experience-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
+    .resume-main-header {
+        margin-bottom: 20px;
     }
+
+    .experience-header {
+        flex-direction: column-reverse;
+
+        align-items: center;
+        gap: 40px;
+        margin-bottom: 40px;
+    }
+
+    .experience-header h2 {
+        align-self: flex-start;
+    }
+
 
     .experience-card {
         flex-direction: column;
         padding: 30px;
+        gap: 0;
     }
 
     .experience-details {
         flex-basis: auto;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
     }
 }
