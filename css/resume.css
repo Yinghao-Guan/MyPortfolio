@@ -9,8 +9,13 @@ body {
 .resume-container {
     max-width: 980px; /* 限制最大宽度 */
     margin: 0 auto; /* 改为0 auto，顶部间距由header控制 */
-    padding: 0 20px;
+    padding: 0 100px;
     background-color: #EDEAE6;
+}
+
+.resume-bg-container {
+    padding-top: 7rem;
+
 }
 
 /* --- "Resume" 主标题 --- */

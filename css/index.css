@@ -13,7 +13,7 @@
 }
 
 html, body {
-    height: 100vh; /* Set height to 100% of the viewport height */
+    min-height: 100vh; /* Set height to 100% of the viewport height */
     overflow: hidden; /* Prevent scrolling */
     font-family: 'Roboto', sans-serif;
     background-color: var(--background-color);
@@ -34,6 +34,8 @@ body {
     align-items: center;
     text-align: center;
     padding: 0 2rem;
+
+    transform: translateY(40px);
 }
 
 .main-content h1 {
