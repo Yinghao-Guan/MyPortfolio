@@ -47,7 +47,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 25px;
+    margin-bottom: 40px;
 }
 
 .experience-header h2 {
@@ -126,6 +126,10 @@ body {
     font-size: 1rem;
     line-height: 1.7;
     color: #333;
+}
+
+.experience-card + .experience-header {
+    margin-top: 70px; /* 您可以根据喜好调整这个数值 */
 }
 
 /* --- 响应式设计：小屏幕设备 --- */

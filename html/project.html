@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <!-- Link to common styles and the new project-specific styles -->
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/project.css">
+</head>
+<body>
+
+<!-- Placeholder for the navigation bar -->
+<div id="nav-placeholder"></div>
+
+<!-- Main background container for the page -->
+<div class="page-bg-container">
+    <main class="page-container">
+        <!-- =================================================================== -->
+        <!-- Projects Main Header -->
+        <!-- =================================================================== -->
+        <header class="project-main-header">
+            <div class="header-title-wrapper">
+                <span class="title-decorator"></span>
+                <h1>Projects</h1>
+            </div>
+            <p class="header-intro-text">
+                I'm a paragraph. Click here to add your own text and edit me. It's easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. I'm a great place for you to tell a story and let your users know a little more about you.
+            </p>
+        </header>
+
+        <!-- =================================================================== -->
+        <!-- Project Cards Section -->
+        <!-- =================================================================== -->
+        <div class="project-grid">
+            <!-- Project Card 01 -->
+            <article class="project-card">
+                <div class="project-text-content">
+                    <!-- The new heading structure -->
+                    <div class="project-heading">
+                        <div class="title-vertical-bar"></div>
+                        <div class="title-text-group">
+                            <h2>Project name 01</h2>
+                            <p class="project-role">Role Title</p>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        I'm a paragraph. Click here to add your own text and edit me. It's easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. I'm a great place for you to tell a story and let your users know a little more about you.
+                    </p>
+                </div>
+                <div class="project-image-content">
+                    <img src="https://placehold.co/600x400/E0E0E0/333?text=Project+Image" alt="Placeholder image for Project 01">
+                </div>
+            </article>
+
+            <!-- Project Card 02 -->
+            <article class="project-card">
+                <div class="project-text-content">
+                    <!-- The new heading structure -->
+                    <div class="project-heading">
+                        <div class="title-vertical-bar"></div>
+                        <div class="title-text-group">
+                            <h2>Project name 02</h2>
+                            <p class="project-role">Role Title</p>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        This is a placeholder description for the second project. You can describe the challenge, the process, and the outcome of your work here, highlighting the technologies you used.
+                    </p>
+                </div>
+                <div class="project-image-content">
+                    <img src="https://placehold.co/600x400/E0E0E0/333?text=Project+Image" alt="Placeholder image for Project 02">
+                </div>
+            </article>
+
+            <!-- Project Card 03 -->
+            <article class="project-card">
+                <div class="project-text-content">
+                    <!-- The new heading structure -->
+                    <div class="project-heading">
+                        <div class="title-vertical-bar"></div>
+                        <div class="title-text-group">
+                            <h2>Project name 03</h2>
+                            <p class="project-role">Role Title</p>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        This is a placeholder for project three. Talk about your contributions, the problems you solved, and what you learned from the experience. Make it engaging and informative.
+                    </p>
+                </div>
+                <div class="project-image-content">
+                    <img src="https://placehold.co/600x400/E0E0E0/333?text=Project+Image" alt="Placeholder image for Project 03">
+                </div>
+            </article>
+        </div>
+    </main>
+</div>
+
+<!-- Placeholder for the footer -->
+<div id="footer-placeholder"></div>
+
+<script>
+    // --- Load Navigation and Footer ---
+    // Assumes project.html is inside the 'html' folder
+    fetch('/html/nav.html')
+        .then(res => res.text())
+        .then(data => {
+            document.getElementById('nav-placeholder').innerHTML = data;
+        });
+
+    fetch('/html/footer.html')
+        .then(res => res.text())
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        });
+
+
+    // --- Navigation Bar Active State Handler ---
+    document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(() => {
+            const currentPagePath = window.location.pathname;
+            const navLinks = document.querySelectorAll('.nav-links a');
+
+            navLinks.forEach(link => {
+                const linkPath = new URL(link.href).pathname;
+                if (currentPagePath.includes(linkPath)) {
+                    link.classList.add('active');
+                    link.setAttribute('aria-current', 'page');
+                    link.addEventListener('click', (event) => {
+                        event.preventDefault();
+                    });
+                }
+            });
+        }, 100);
+    });
+</script>
+
+</body>
+</html>
