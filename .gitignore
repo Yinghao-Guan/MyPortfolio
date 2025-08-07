@@ -11,6 +11,9 @@ node_modules/
 # VS Code 编辑器设置（可选忽略）
 .vscode/
 
+# JetBrains IDE环境
+.idea/
+
 # Mac 特有
 .AppleDouble
 .LSOverride
