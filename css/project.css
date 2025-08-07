@@ -123,6 +123,49 @@
 }
 
 
+/* --- Button & Link Styles --- */
+
+.action-links {
+    display: flex;
+    gap: 1rem; /* Space between buttons */
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.7rem 1.8rem; /* Controls button size */
+    border-radius: 8px; /* Rounded corners */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: all 0.3s ease; /* Smooth transition effect */
+    border: 2px solid transparent; /* Transparent border by default */
+}
+
+/* Primary Button Style (Solid) */
+.btn {
+    background-color: #002fa7; /* Dark blue background */
+    color: #F7F7F5; /* White text */
+}
+
+.btn:hover {
+    background-color: #002A9A; /* Slightly darker blue on hover */
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Secondary Button Style (Outlined) */
+.btn.btn-secondary {
+    background-color: transparent; /* Transparent background */
+    color: #002fa7; /* Dark blue text */
+    border: 2px solid #002fa7; /* Dark blue border */
+}
+
+.btn.btn-secondary:hover {
+    background-color: #002fa7; /* Fill background on hover */
+    color: #F7F7F5; /* Text becomes white */
+}
+
+
 /* =================================================================== */
 /* Responsive Design */
 /* =================================================================== */
