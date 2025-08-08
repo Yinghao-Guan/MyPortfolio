@@ -1,0 +1,120 @@
+/* css/about.css */
+
+/* =================================================================== */
+/* General Page Layout */
+/* =================================================================== */
+
+.page-bg-container {
+    background-color: #EDEAE6;
+    padding: 180px 0 80px 0;
+    min-height: 80vh; /* Ensures the background covers most of the view height */
+}
+
+.page-container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* =================================================================== */
+/* "About Me" Header */
+/* =================================================================== */
+
+.about-main-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.header-title-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.title-decorator {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-color: #002FA7;
+    margin-right: 18px;
+    flex-shrink: 0;
+}
+
+.about-main-header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    font-weight: 700;
+}
+
+/* =================================================================== */
+/* About Content Grid (Image + Text) */
+/* =================================================================== */
+
+.about-content-grid {
+    display: grid;
+    grid-template-columns: 220px 1fr; /* Fixed width for image, remaining for text */
+    gap: 60px; /* Increased gap for better visual separation */
+    align-items: flex-start; /* Aligns items to the top of the grid */
+    background-color: #FFFFFF;
+    padding: 60px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.about-image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* Slightly rounded corners for the image */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.about-text-container h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: #002FA7;
+}
+
+.about-text-container p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.about-text-container p:last-child {
+    margin-bottom: 0;
+}
+
+/* =================================================================== */
+/* Responsive Design */
+/* =================================================================== */
+
+@media (max-width: 768px) {
+    .page-bg-container {
+        padding: 120px 0 60px 0;
+    }
+
+    .page-container {
+        padding: 0 20px;
+    }
+
+    .about-main-header {
+        margin-bottom: 60px;
+    }
+
+    .about-content-grid {
+        grid-template-columns: 1fr; /* Stacks image on top of text */
+        gap: 40px;
+        padding: 40px;
+    }
+
+    .about-image-container {
+        max-width: 200px; /* Controls image size on mobile */
+        margin: 0 auto; /* Centers the image */
+    }
+
+    .about-text-container h2 {
+        text-align: center;
+    }
+}

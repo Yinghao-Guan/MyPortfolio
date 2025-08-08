@@ -4,28 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects</title>
-    <!-- Favicon -->
     <link rel="icon" type="image/png" href="/assets/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
     <link rel="shortcut icon" href="/assets/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="Peter Guan" />
     <link rel="manifest" href="/assets/site.webmanifest" />
-    <!-- Link to common styles and the new project-specific styles -->
     <link rel="stylesheet" href="/css/common.css">
     <link rel="stylesheet" href="/css/project.css">
 </head>
 <body>
 
-<!-- Placeholder for the navigation bar -->
 <div id="nav-placeholder"></div>
 
-<!-- Main background container for the page -->
 <div class="page-bg-container">
     <main class="page-container">
-        <!-- =================================================================== -->
-        <!-- Projects Main Header -->
-        <!-- =================================================================== -->
         <header class="project-main-header">
             <div class="header-title-wrapper">
                 <span class="title-decorator"></span>
@@ -126,12 +119,10 @@
     </main>
 </div>
 
-<!-- Placeholder for the footer -->
 <div id="footer-placeholder"></div>
 
 <script>
     // --- Load Navigation and Footer ---
-    // Assumes project.html is inside the 'html' folder
     fetch('/html/nav.html')
         .then(res => res.text())
         .then(data => {
@@ -145,7 +136,7 @@
         });
 
 
-    // --- Navigation Bar Active State Handler ---
+    // --- 更新后的导航栏激活状态处理脚本 ---
     document.addEventListener('DOMContentLoaded', function() {
         setTimeout(() => {
             const currentPagePath = window.location.pathname;
@@ -156,8 +147,14 @@
                 if (currentPagePath.includes(linkPath)) {
                     link.classList.add('active');
                     link.setAttribute('aria-current', 'page');
+
+                    // 当点击当前页面的导航链接时，平滑滚动到页面顶部
                     link.addEventListener('click', (event) => {
-                        event.preventDefault();
+                        event.preventDefault(); // 阻止链接的默认刷新行为
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
                     });
                 }
             });

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link rel="icon" type="image/png" href="/assets/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Peter Guan" />
+    <link rel="manifest" href="/assets/site.webmanifest" />
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/about.css">
+</head>
+<body>
+
+<div id="nav-placeholder"></div>
+
+<div class="page-bg-container">
+    <main class="page-container">
+        <header class="about-main-header">
+            <div class="header-title-wrapper">
+                <span class="title-decorator"></span>
+                <h1>About Me</h1>
+            </div>
+        </header>
+
+        <div class="about-content-grid">
+            <div class="about-image-container">
+                <img src="/img/PG_Logo.png" alt="Peter Guan's Logo">
+            </div>
+            <div class="about-text-container">
+                <h2>Exploring the Intersection of Technology & Humanity</h2>
+                <p>
+                    My journey into technology began with a simple curiosity: I wanted to understand why a virtual currency like Bitcoin held real-world value and how a decentralized world could function. This initial spark led me into the vast world of Web3, where I discovered that concepts from DeFi to smart contracts were the perfect intersection of my passions for computer science and finance. Today, I'm driven not just by the technology itself, but by the potential to help build a more equitable and transparent digital future.
+                </p>
+                <p>
+                    As I began turning ideas into applications, I realized that functional code is only the beginning; the real challenge lies in creating experiences that are 'better to use'. This led me to Human-Computer Interaction (HCI), where my focus is on bridging the gap between cutting-edge technology and everyday users. Whether it's refining an app's user flow or exploring how to build trust in AI, my goal is to make technology feel intuitive, accessible, and ultimately, more human.
+                </p>
+
+                <h2>Beyond the Code</h2>
+                <p>
+                    Life outside of technology gives me balance and inspiration. Music has been a lifelong friend: the classical piano, which I started at age four, has been like a patient 'elder' in my life, teaching me discipline and deep emotional expression. In contrast, the folk guitar I picked up in high school feels more like a casual 'playmate'—perfect for capturing the spirit of the moment with the pop songs I enjoy.
+                </p>
+                <p>
+                    I find a similar blend of focus and reflection in sports. The strategic back-and-forth of fencing taught me the art of anticipation. Meanwhile, on the golf course, I value both the quiet solitude of walking the fairway and the quality, unplugged time spent with friends. These diverse experiences are essential, as they come together to shape a more complete and multi-dimensional person.
+                </p>
+                <p>
+                    Having grown up in Tianjin, studied in Auckland and Edinburgh, and now settled in Los Angeles, I've had the privilege of calling several corners of the world my home. This journey has instilled in me a deep respect for diverse cultures and a natural adaptability. I thrive in new environments and believe this global perspective is one of my greatest assets, allowing me to connect with people and ideas from all walks of life.
+                </p>
+            </div>
+        </div>
+    </main>
+</div>
+
+<div id="footer-placeholder"></div>
+
+<script>
+    // Load navigation and footer
+    fetch('/html/nav.html').then(res => res.text()).then(data => {
+        document.getElementById('nav-placeholder').innerHTML = data;
+    });
+    fetch('/html/footer.html').then(res => res.text()).then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+    });
+
+    // Navigation active state handler
+    document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(() => {
+            const navLinks = document.querySelectorAll('.nav-links a');
+            navLinks.forEach(link => {
+                const linkPath = new URL(link.href).pathname;
+                if (window.location.pathname === linkPath) {
+                    link.classList.add('active');
+                    link.setAttribute('aria-current', 'page');
+                    link.addEventListener('click', (event) => {
+                        event.preventDefault();
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    });
+                }
+            });
+        }, 100);
+    });
+</script>
+
+</body>
+</html>
