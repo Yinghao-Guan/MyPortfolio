@@ -122,6 +122,11 @@
     display: block;
 }
 
+/* --- Add new rule for landscape images that need to be contained --- */
+.project-image-content.project-image-contain img {
+    object-fit: contain; /* Override the default 'cover' style */
+}
+
 
 /* --- Button & Link Styles --- */
 
