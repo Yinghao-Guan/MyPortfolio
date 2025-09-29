@@ -128,8 +128,34 @@ body {
     color: #333;
 }
 
+.experience-description ul{
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
 .experience-card + .experience-header {
     margin-top: 70px; /* 您可以根据喜好调整这个数值 */
+}
+
+.skill-card {
+    background-color: #FFFFFF;
+    padding: 40px;
+    /*border-radius: 8px;*/
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    display: flex;
+    gap: 40px;
+
+    margin-bottom: 40px;
+}
+
+.skill-details{
+    /*flex-basis: 220px;*/
+    flex-shrink: 0;
+}
+
+.skill-details h3{
+    color: #002FA7;
+    margin-bottom: 20px;
 }
 
 /* --- 响应式设计：小屏幕设备 --- */
