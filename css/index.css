@@ -14,7 +14,7 @@
 
 html, body {
     min-height: 100vh; /* Set height to 100% of the viewport height */
-    overflow: hidden; /* Prevent scrolling */
+    /*overflow: hidden; /* Prevent scrolling */
     font-family: 'Roboto', sans-serif;
     background-color: var(--background-color);
     color: var(--text-color);
