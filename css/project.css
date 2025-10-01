@@ -170,6 +170,15 @@
     color: #F7F7F5; /* Text becomes white */
 }
 
+/* --- Style for Text-Only Project Cards --- */
+.project-card.text-only-card {
+    flex-direction: column; /* Stacks content vertically */
+}
+
+.project-card.text-only-card .project-image-content {
+    display: none; /* Hides the image container entirely */
+}
+
 
 /* =================================================================== */
 /* Responsive Design */

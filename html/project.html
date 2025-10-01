@@ -41,7 +41,11 @@
                         </div>
                     </div>
                     <p class="project-description">
-                        This project is a deep dive into compiler theory and desktop application development, where I independently engineered a complete editor for a custom markup language, MyMD. The core of the application is a compiler front-end built with <strong>ANTLR</strong>, which parses source text into an Abstract Syntax Tree (AST). I then designed a decoupled conversion pipeline that transforms this AST into a <strong>Pandoc</strong>-compatible JSON format, enabling seamless export to HTML and LaTeX by integrating the external Pandoc toolchain. The graphical user interface was built from scratch using <strong>JavaFX</strong>, following the <strong>MVVM</strong> architecture to ensure a clean, maintainable, and testable codebase. The project's reliability is backed by comprehensive unit tests written with <strong>JUnit 5</strong>.
+                        This project was born from a personal need for a tool that blends the simplicity and speed of <strong>Markdown</strong> with the professional typesetting and citation capabilities of <strong>LaTeX</strong>. To fill this gap, I independently designed and developed MyMD, a custom markup language, along with its dedicated desktop editor.
+                        <br><br>
+                        The application's core is a compiler front-end built with <strong>ANTLR</strong>, which accurately parses MyMD source into an Abstract Syntax Tree (AST). Pivoting from an initial, unstable regex-based prototype, the current architecture uses the Visitor pattern to convert the AST into a <strong>Pandoc</strong>-compatible JSON format. This decouples the parser from the back-end, enabling robust and seamless export to HTML and LaTeX. The entire desktop application was built from the ground up using <strong>JavaFX</strong> and follows the <strong>MVVM</strong> architecture to ensure a clean, testable, and extensible codebase, with reliability backed by a suite of <strong>JUnit 5</strong> unit tests.
+                        <br><br>
+                        Currently, the project is a Minimum Viable Product (MVP) with a live-preview editor. The long-term vision is to evolve it from a simple GUI into a full-featured Integrated Development Environment (IDE).
                         <br><br><strong>Technologies:</strong> Java, JavaFX, ANTLR, MVVM, JUnit 5, Maven, Pandoc
                     </p>
 
@@ -54,22 +58,47 @@
                 </div>
             </article>
 
-            <article class="project-card">
+            <article class="project-card text-only-card">
                 <div class="project-text-content">
                     <div class="project-heading">
                         <div class="title-vertical-bar"></div>
                         <div class="title-text-group">
-                            <h2>AI-Powered Language Learning Game</h2>
-                            <p class="project-role">Solo Developer / AI Engineer</p>
+                            <h2>UCLA HCI Research Collaboration</h2>
+                            <p class="project-role">Lead Researcher / AI Developer</p>
                         </div>
                     </div>
                     <p class="project-description">
-                        Developed a 2D top-down "escape room" game in Unity designed to make language learning interactive and fun. The core feature is the integration of Google's <strong>Vertex AI (Gemini API)</strong> to dynamically generate questions and prompts for in-game puzzles. Players interact with the AI to solve riddles and unlock chests, creating a unique and personalized learning path with every playthrough. The AI backend was built with Python.
-                        <br><br><strong>Technologies:</strong> Unity, C#, Python, Google Vertex AI (Gemini API)
+                        In collaboration with a faculty member at UCLA, I am leading a research project investigating the effects of <strong>eXplainable AI (XAI)</strong> on user trust and perceived empathy in emotional support conversational agents. This work addresses a critical challenge in <strong>Human-Computer Interaction (HCI)</strong>: the "black box" nature of AI systems, which can hinder the development of a supportive human-AI relationship in sensitive contexts.
+                        <br><br>
+                        The core research question is: How does providing AI-generated explanations for its emotion detection affect a user's trust and sense of connection? To answer this, I have designed a comparative user study employing an <strong>A/B testing</strong> methodology. This involves prototyping two versions of a chatbot: an XAI version that transparently explains its emotional inference and allows users to correct it, and a non-XAI control version. The project is currently in the foundational phase, which involves conducting an in-depth literature review and formalising the research methodology.
+                        <br><br>
+                        A key innovation of this study is its focus on <strong>user agency</strong>, exploring how the ability to correct the AI's predictions can help repair interactional breakdowns and foster a more collaborative human-AI partnership. The expected outcome is a set of evidence-based design guidelines and a research paper suitable for submission to a peer-reviewed HCI conference or journal.
+                        <br><br><strong>Fields:</strong> Human-Computer Interaction, Explainable AI, Large Language Models, User-Centred Design
                     </p>
                 </div>
-                <div class="project-image-content">
-                    <img src="/img/escape_room_screenshot.png" alt="AI Language Learning Game Screenshot">
+            </article>
+
+            <article class="project-card text-only-card">
+                <div class="project-text-content">
+                    <div class="project-heading">
+                        <div class="title-vertical-bar"></div>
+                        <div class="title-text-group">
+                            <h2>Behavioural Modelling of Excessive Trading</h2>
+                            <p class="project-role">Lead Developer / Quantitative Analyst</p>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        This project was sparked by observing the tech market's sharp downturn following the release of the DeepSeek model, which seemed to defy rational market theory. It led me to question: what behavioural drivers lead to such excessive trading? This study was designed to quantitatively model the impact of psychological biases on trading activity.
+                        <br><br>
+                        As the architect of the technical pipeline, my greatest challenge was not just implementing the model, but selecting the correct observable indicators to accurately measure latent behaviours. I built a hybrid data analysis workflow, using <strong>Python</strong> (pandas) for data cleaning and engineering a mixed-language environment in WSL to integrate <strong>R</strong> (via rpy2) for the core <strong>Partial Least Squares Structural Equation Modeling (PLS-SEM)</strong>.
+                        <br><br>
+                        The model successfully validated that behavioural biases have a significant impact on excessive trading. Notably, while Herding and Anchoring were influential, the analysis revealed that <strong>Fear of Missing Out (FoMO)</strong> was by far the most powerful predictive factor. The anonymised analysis code for this study is available on GitHub.
+                        <br><br><strong>Technologies:</strong> Python, R, pandas, PLS-SEM, rpy2, Matplotlib, Seaborn
+                    </p>
+
+                    <div class="action-links" style="justify-content: flex-start; margin-top: 2rem;">
+                        <a href="https://github.com/Yinghao-Guan/DeepSeek-Analysis.git" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                    </div>
                 </div>
             </article>
 
@@ -83,35 +112,14 @@
                         </div>
                     </div>
                     <p class="project-description">
-                        As part of a four-person team, I co-developed a comprehensive FAQ system for university kiosks using <strong>Java</strong> and the <strong>MVC architecture</strong>. My responsibilities included conducting user research through interviews with students and staff to gather requirements and define user personas. I implemented a keyword-based search functionality using <strong>Lucene</strong> and contributed to the overall system design, which routed unanswered questions to university staff.
+                        As part of a four-person team in a university software engineering course, I co-developed the back-end for a hierarchical FAQ system designed for university kiosks. The project's goal was to provide students with quick, accessible answers and route unanswered queries to staff.
+                        <br><br>
+                        Our process mirrored a standard software development lifecycle. We began by conducting simulated user interviews to gather requirements, which informed our system design. A key academic requirement was to model our architecture with <strong>UML</strong> (use case, sequence, and class diagrams) before writing any code. As a developer on the team, I was jointly responsible for implementing the back-end logic in <strong>Java</strong> following the <strong>MVC architecture</strong>. This included authoring the search module, which used <storng>Lucene</storng> for keyword matching, and ensuring our code was thoroughly tested with <strong>JUnit</strong>.
                         <br><br><strong>Technologies:</strong> Java, MVC, Lucene, UML, Git, JUnit
                     </p>
                 </div>
                 <div class="project-image-content">
-                    <img src="/img/UMLCLASS.svg" alt="FAQ System UI Screenshot">
-                </div>
-            </article>
-
-            <article class="project-card">
-                <div class="project-text-content">
-                    <div class="project-heading">
-                        <div class="title-vertical-bar"></div>
-                        <div class="title-text-group">
-                            <h2>Full-Stack Android Chat Application</h2>
-                            <p class="project-role">Independent Full-Stack Developer</p>
-                        </div>
-                    </div>
-                    <p class="project-description">
-                        Independently designed and built a complete real-time chat application for Android from the ground up. Leveraging <strong>Firebase</strong> for the backend, I implemented key features including secure user authentication, real-time message synchronization with cloud database, online presence indicators, and offline data caching. The UI was built with XML following Material Design principles, focusing on a clean and intuitive user experience. This project demonstrates my ability to handle both front-end and back-end development.
-                        <br><br><strong>Technologies:</strong> Java, XML, Firebase (Authentication, Realtime Database)
-                    </p>
-
-                    <div class="action-links" style="justify-content: flex-start; margin-top: 2rem;">
-                        <a href="https://github.com/Yinghao-Guan/MeetU.git" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View on GitHub</a>
-                    </div>
-                </div>
-                <div class="project-image-content">
-                    <img src="/img/android_prototype.png" alt="Android Chat App Screenshot">
+                    <img src="/img/UMLCLASS.svg" alt="FAQ System UML Class Diagram">
                 </div>
             </article>
 
@@ -125,8 +133,10 @@
                         </div>
                     </div>
                     <p class="project-description">
-                        Conducted an independent data analysis project on a Kaggle dataset of over 200,000 ultra-marathon race records. Using <strong>Python</strong> and its data science libraries (Pandas, Matplotlib), I preprocessed the data and applied <strong>K-means clustering</strong> to identify distinct runner segments based on performance and demographics. The findings, which highlighted performance patterns across different race categories and age groups, were compiled into a detailed report.
-                        <br><br><strong>Technologies:</strong> Python, Pandas, Matplotlib, Scikit-learn, K-means Clustering
+                        In this independent data analysis project, I investigated a Kaggle dataset of over 200,000 ultra-marathon records to uncover performance patterns over time. The primary goal was to explore how factors like event year, distance, and club affiliation correlated with athlete performance.
+                        <br><br>
+                        Using <strong>Python</strong> libraries such as <strong>Pandas</strong>, <strong>Matplotlib</strong>, and <strong>Scikit-learn</strong>, I cleaned and preprocessed the extensive dataset. I then applied <strong>K-means clustering</strong> and identified three distinct performance groups across the 50km, 100km, 50mi, and 100mi race categories. The analysis revealed a general trend of improving performance in recent years, with a notable exception in the 100km category, where the mid-century (c. 1950-1990) cluster of runners demonstrated the strongest results. Further linear regression analysis on club affiliation uncovered more nuanced trends, compiling all findings into a detailed report written in <strong>LaTeX</strong>.
+                        <br><br><strong>Technologies:</strong> Python, Pandas, Matplotlib, Scikit-learn, K-means Clustering, LaTeX
                     </p>
 
                     <div class="action-links" style="justify-content: flex-start; margin-top: 2rem;">
@@ -134,7 +144,7 @@
                     </div>
                 </div>
                 <div class="project-image-content">
-                    <img src="/img/q1.png" alt="Data Visualization Chart">
+                    <img src="/img/q1.png" alt="Data Visualization Chart from Marathon Analysis">
                 </div>
             </article>
 
