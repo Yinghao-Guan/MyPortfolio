@@ -1,11 +1,45 @@
-/* common.css */
+/* css/common.css */
 
-/* 全局变量 */
+/* 1. 引入高级字体: Lora (标题) 和 Inter (正文) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Lora:ital,wght@0,600;0,700;1,400&display=swap');
+
+/* 2. 定义全局变量 (默认浅色模式) */
 :root {
-    --primary-color: #0070F3;
-    /*--primary-color: #002fa7;*/
-    --background-color: #F7F7F5;
-    --text-color: #1E1E1E;
+    /* 核心色板 */
+    --primary-color: #002FA7;       /* 你的经典深蓝 */
+    --accent-color: #002FA7;        /* 强调色 */
+
+    /* 背景体系 */
+    --background-color: #F7F7F5;    /* 网页背景 (米白) */
+    --card-bg: #FFFFFF;             /* 卡片背景 (纯白) */
+
+    /* 文字体系 */
+    --text-color: #1E1E1E;          /* 主要文字 */
+    --text-muted: #6c757d;          /* 次要文字 (日期/地点) */
+
+    /* 装饰体系 */
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    --border-radius: 8px;
+
+    /* 字体体系 */
+    --font-heading: 'Lora', serif;  /* 标题用衬线体 */
+    --font-body: 'Inter', sans-serif; /* 正文用无衬线体 */
+}
+
+/* 3. 深色模式适配 (Dark Mode) */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-color: #64ffda;      /* 极客绿/青 (深色背景下更亮眼) */
+        --accent-color: #64ffda;
+
+        --background-color: #0a192f;   /* 深海军蓝背景 */
+        --card-bg: #112240;            /* 深色卡片背景 */
+
+        --text-color: #ccd6f6;         /* 浅灰蓝文字 */
+        --text-muted: #8892b0;         /* 暗灰文字 */
+
+        --shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
+    }
 }
 
 /* 基础重置 */
@@ -16,9 +50,18 @@
 }
 
 html, body {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-body); /* 应用新字体 */
     background-color: var(--background-color);
     color: var(--text-color);
+    line-height: 1.6; /* 增加行高，提升阅读体验 */
+    transition: background-color 0.3s ease, color 0.3s ease; /* 模式切换时的平滑过渡 */
+}
+
+/* 标题通用样式 */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading); /* 标题应用衬线体 */
+    font-weight: 700;
+    color: var(--text-color); /* 确保标题颜色跟随主题 */
 }
 
 /* Navigation Bar */
@@ -30,13 +73,18 @@ html, body {
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem 3rem;
-    background-color: var(--background-color);
+    background-color: var(--background-color); /* 使用变量 */
+    /* 增加一个磨砂玻璃效果 (可选，看起来更高级) */
+    backdrop-filter: blur(10px);
+    background-color: rgba(var(--background-color), 0.85);
     z-index: 1000;
+    transition: all 0.3s ease;
 }
 
 .navbar-brand {
+    font-family: var(--font-heading); /* Logo 也用衬线体 */
     font-weight: 700;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     text-decoration: none;
     color: var(--text-color);
 }
@@ -49,44 +97,41 @@ html, body {
 
 .nav-links a {
     text-decoration: none;
-    color: var(--text-color);
+    color: var(--text-color); /* 链接颜色跟随主题 */
     font-size: 1rem;
+    font-weight: 500;
     transition: color 0.3s ease-in-out;
 }
 
-.nav-links a:hover {
+.nav-links a:hover, .nav-links a.active {
     color: var(--primary-color);
 }
 
-
 /* Footer */
 .footer {
-    /*position: fixed;*/
-    /*bottom: 0;*/
-    /*width: 100%;*/
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 3rem;
+    padding: 3rem 3rem; /* 增加一点留白 */
     background-color: var(--background-color);
-    /*border-top: 1px solid #e0e0e0;*/
 }
 
 .footer .copyright {
     font-size: 0.9rem;
+    color: var(--text-muted);
 }
 
 .footer .social-icons {
-    display: flex;
-    gap: 1.5rem;
-    align-items: center;
+    display: flex;          /* 找回 Flex 布局 */
+    gap: 1.5rem;             /* 关键：控制图标和邮箱之间的间距 (原为1.5rem，微调大一点更不挤) */
+    align-items: center;    /* 垂直居中对齐 */
 }
 
 .footer-email-link {
     font-size: 0.9rem;
     color: var(--text-color);
     text-decoration: none;
-    opacity: 0.75;
+    opacity: 0.8;
     transition: all 0.3s ease-in-out;
 }
 
@@ -97,33 +142,33 @@ html, body {
 
 .footer .social-icons a {
     color: var(--text-color);
-    opacity: 0.75;
-    transition: color 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    opacity: 0.8;
+    transition: color 0.3s ease-in-out, transform 0.2s ease;
 }
 
 .footer .social-icons a:hover {
     color: var(--primary-color);
+    transform: translateY(-3px); /* 小小的上浮动画 */
     opacity: 1;
 }
 
 .footer .social-icons svg {
     width: 24px;
     height: 24px;
-    fill: currentColor;
+    fill: currentColor; /* 让 SVG 颜色自动跟随文字颜色 */
 }
 
-/* Responsive Adjustments for Nav/Footer */
+/* Responsive Adjustments */
 @media (max-width: 768px) {
     .navbar {
         padding: 1rem 1.5rem;
         flex-direction: column;
         gap: 1rem;
     }
-
     .footer {
         flex-direction: column;
-        gap: 1rem;
-        padding: 1rem 1.5rem;
+        gap: 1.5rem;
+        padding: 2rem 1.5rem;
         text-align: center;
     }
 }

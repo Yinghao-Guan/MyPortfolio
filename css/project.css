@@ -3,7 +3,7 @@
 /* =================================================================== */
 
 .page-bg-container {
-    background-color: #EDEAE6;
+    background-color: var(--background-color);
     /* Updated padding-top to 180px as requested */
     padding: 180px 0 80px 0;
 }
@@ -34,7 +34,7 @@
     display: inline-block;
     width: 16px;
     height: 16px;
-    background-color: #002FA7;
+    background-color: var(--primary-color);
     margin-right: 18px;
     flex-shrink: 0;
 }
@@ -50,7 +50,7 @@
     margin: 0 auto;
     font-size: 1rem;
     line-height: 1.7;
-    color: #333;
+    color: var(--text-color);
 }
 
 
@@ -65,7 +65,7 @@
 
 .project-card {
     display: flex;
-    background-color: #FFFFFF;
+    background-color: var(--card-bg);
     border-radius: 8px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     overflow: hidden;
@@ -87,7 +87,7 @@
 .title-vertical-bar {
     width: 4px;
     height: 50px; /* Adjust height as needed */
-    background-color: #002FA7;
+    background-color: var(--primary-color);
     border-radius: 2px; /* Slightly rounded corners for the bar */
 }
 
@@ -107,7 +107,7 @@
 .project-description {
     font-size: 1rem;
     line-height: 1.7;
-    color: #333;
+    color: var(--text-color);
 }
 
 .project-image-content {
@@ -148,7 +148,7 @@
 
 /* Primary Button Style (Solid) */
 .btn {
-    background-color: #002fa7; /* Dark blue background */
+    background-color: var(--primary-color); /* Dark blue background */
     color: #F7F7F5; /* White text */
 }
 
@@ -166,7 +166,7 @@
 }
 
 .btn.btn-secondary:hover {
-    background-color: #002fa7; /* Fill background on hover */
+    background-color: var(--primary-color); /* Fill background on hover */
     color: #F7F7F5; /* Text becomes white */
 }
 

@@ -1,11 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
-:root {
-    --primary-color: #0070F3;
-    --background-color: #F7F7F5;
-    --text-color: #1E1E1E;
-}
-
 * {
     box-sizing: border-box;
     margin: 0;
