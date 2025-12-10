@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://peterguan.com/sitemap.xml
