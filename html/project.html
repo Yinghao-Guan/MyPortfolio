@@ -23,7 +23,7 @@
                 <h1>Selected Work</h1>
             </div>
             <p class="header-intro-text">
-                From data-driven analysis to full-stack applications and cutting-edge AI integrations.
+                From AI-powered auditing tools to behavioural finance modelling and compiler engineering.
             </p>
         </header>
 
@@ -31,46 +31,52 @@
 
             <article class="project-card" style="animation-delay: 0.2s;">
                 <div class="project-image-content project-image-contain">
-                    <img src="/img/Demo.png" alt="MyMD Editor Interface">
+                    <img src="/img/veru_demo.gif" alt="Veru AI Interface Demo">
                 </div>
 
                 <div class="project-text-content">
                     <div class="project-heading">
                         <div class="title-vertical-bar"></div>
                         <div class="title-text-group">
-                            <h2>Custom Markup Language Editor & Parser</h2>
-                            <p class="project-role">Independent Software Developer</p>
+                            <h2>Veru: AI Citation Auditor</h2>
+                            <p class="project-role">Lead Developer / Founder</p>
                         </div>
                     </div>
                     <p class="project-description">
-                        This project was born from a personal need for a tool that blends the simplicity of <strong>Markdown</strong> with the typesetting of <strong>LaTeX</strong>. I developed MyMD and its dedicated desktop editor.
+                        An AI-powered tool designed to detect "hallucinations" in academic writing by cross-referencing citations against <strong>OpenAlex</strong> (250M+ papers).
                         <br><br>
-                        Core features include an <strong>ANTLR</strong>-based compiler front-end and a <strong>JavaFX</strong> UI built on <strong>MVVM</strong> architecture. It uses the Visitor pattern to convert ASTs to Pandoc-compatible JSON, bridging the gap between casual writing and professional publishing.
-                        <br><br><strong>Technologies:</strong> Java, JavaFX, ANTLR, MVVM, JUnit 5, Maven
+                        Engineered a <strong>Next.js 14</strong> frontend and <strong>FastAPI</strong> backend. Features include a multi-tier verification system (OpenAlex, Semantic Scholar, Google Grounding) and a semantic auditor powered by <strong>Gemini 2.0 Flash</strong>. Served 100+ users in its first week.
+                        <br><br><strong>Technologies:</strong> Next.js, FastAPI, Python, Tailwind, Google Gemini API
                     </p>
                     <div class="action-links">
-                        <a href="https://github.com/Yinghao-Guan/MyMD" class="btn" target="_blank">View on GitHub</a>
+                        <a href="https://veru.app" class="btn btn-solid" target="_blank">Live Demo</a>
+                        <a href="https://github.com/Yinghao-Guan/Veru" class="btn" target="_blank">GitHub</a>
                     </div>
                 </div>
             </article>
 
             <article class="project-card" style="animation-delay: 0.3s;">
+                <div class="project-image-content project-image-contain">
+                    <img src="/img/realibuddy_cover.png" alt="Realibuddy Interface" onerror="this.style.display='none'">
+                </div>
+
                 <div class="project-text-content">
                     <div class="project-heading">
                         <div class="title-vertical-bar"></div>
                         <div class="title-text-group">
-                            <h2>UCLA HCI Research Collaboration</h2>
-                            <p class="project-role">Lead Researcher / AI Developer</p>
+                            <h2>Realibuddy: Voice Fact-Checker</h2>
+                            <p class="project-role">Backend Lead (HackCC Winner)</p>
                         </div>
                     </div>
                     <p class="project-description">
-                        Leading a research project investigating the effects of <strong>eXplainable AI (XAI)</strong> on user trust and perceived empathy in emotional support chatbots.
+                        Winner of the <strong>Best AI/ML Award</strong> (Top 1 out of 29 teams). A real-time conversational assistant that verifies spoken claims instantly.
                         <br><br>
-                        Designed an <strong>A/B testing</strong> study comparing transparent XAI models vs. black-box controls. The research explores how <strong>user agency</strong>—the ability to correct AI predictions—can repair interactional breakdowns and foster trust.
-                        <br><br><strong>Fields:</strong> HCI, Explainable AI, LLMs, User-Centred Design
+                        I architected the backend pipeline, integrating <strong>Deepgram</strong> for live transcription and <strong>Perplexity</strong> for grounded truth retrieval via WebSockets. The system achieved sub-second latency for real-time feedback.
+                        <br><br><strong>Technologies:</strong> Python, WebSockets, Deepgram ASR, Perplexity API
                     </p>
                     <div class="action-links">
-                        <a href="https://github.com/Yinghao-Guan/HCI_Chatbot_Prototype.git" class="btn" target="_blank">View Prototype</a>
+                        <a href="https://devpost.com/software/pavshock" class="btn btn-solid" target="_blank">View Devpost</a>
+                        <a href="https://github.com/seanesla/Realibuddy" class="btn" target="_blank">GitHub</a>
                     </div>
                 </div>
             </article>
@@ -80,63 +86,63 @@
                     <div class="project-heading">
                         <div class="title-vertical-bar"></div>
                         <div class="title-text-group">
-                            <h2>Behavioural Modelling of Excessive Trading</h2>
-                            <p class="project-role">Lead Developer / Quant Analyst</p>
+                            <h2>UCLA HCI Research: Trust in XAI</h2>
+                            <p class="project-role">Lead Researcher</p>
                         </div>
                     </div>
                     <p class="project-description">
-                        Quantitatively modelled the impact of psychological biases on excessive trading, sparked by market reactions to DeepSeek.
+                        Investigating how <strong>eXplainable AI (XAI)</strong> influences user trust in emotional support LLMs.
                         <br><br>
-                        Architected a hybrid pipeline using <strong>Python</strong> (pandas) for data engineering and <strong>R</strong> (via rpy2) for <strong>PLS-SEM modelling</strong>. The study validated that <strong>Fear of Missing Out (FoMO)</strong> was the strongest predictive factor for irrational trading behavior.
-                        <br><br><strong>Technologies:</strong> Python, R, PLS-SEM, rpy2, Matplotlib
+                        Designed an <strong>A/B testing</strong> platform to compare "black-box" models vs. transparent models with sentiment analysis. The study explores how <strong>user agency</strong>—the ability to correct AI predictions—can repair interactional breakdowns.
+                        <br><br><strong>Fields:</strong> HCI, Explainable AI, LLMs, User-Centred Design
                     </p>
                     <div class="action-links">
-                        <a href="https://github.com/Yinghao-Guan/DeepSeek-Analysis.git" class="btn" target="_blank">View on GitHub</a>
+                        <a href="https://github.com/Yinghao-Guan/HCI_Chatbot_Prototype.git" class="btn" target="_blank">GitHub</a>
                     </div>
                 </div>
             </article>
 
             <article class="project-card" style="animation-delay: 0.5s;">
-                <div class="project-image-content project-image-contain">
-                    <img src="/img/UMLCLASS.svg" alt="UML Class Diagram">
-                </div>
                 <div class="project-text-content">
                     <div class="project-heading">
                         <div class="title-vertical-bar"></div>
                         <div class="title-text-group">
-                            <h2>Hierarchical University FAQ System</h2>
-                            <p class="project-role">Software Developer</p>
+                            <h2>Behavioural Modelling of Trading</h2>
+                            <p class="project-role">Quant Analyst</p>
                         </div>
                     </div>
                     <p class="project-description">
-                        Co-developed a backend for a university kiosk system. The process followed a strict SDLC, starting with user interviews and detailed <strong>UML</strong> modeling.
+                        Quantitatively modelled the impact of psychological biases (FoMO, Herding) on excessive trading.
                         <br><br>
-                        Implemented the backend in <strong>Java</strong> using <strong>MVC architecture</strong>. I authored the search module using <strong>Lucene</strong> for efficient keyword matching and ensured stability with <strong>JUnit</strong> testing.
-                        <br><br><strong>Technologies:</strong> Java, MVC, Lucene, UML, Git
+                        Architected a hybrid pipeline using <strong>Python</strong> (pandas) for data engineering and <strong>R</strong> (via rpy2) for <strong>PLS-SEM modelling</strong>. Validated that FoMO is a primary predictor of irrational market behaviour.
+                        <br><br><strong>Technologies:</strong> Python, R, PLS-SEM, rpy2, Matplotlib
                     </p>
+                    <div class="action-links">
+                        <a href="https://github.com/Yinghao-Guan/DeepSeek-Analysis.git" class="btn" target="_blank">GitHub</a>
+                    </div>
                 </div>
             </article>
 
             <article class="project-card" style="animation-delay: 0.6s;">
                 <div class="project-image-content project-image-contain">
-                    <img src="/img/q1.png" alt="Data Visualization">
+                    <img src="/img/Demo.png" alt="MyMD Interface">
                 </div>
                 <div class="project-text-content">
                     <div class="project-heading">
                         <div class="title-vertical-bar"></div>
                         <div class="title-text-group">
-                            <h2>Ultra Marathon Performance Analysis</h2>
-                            <p class="project-role">Data Analyst</p>
+                            <h2>Custom Markup IDE & Compiler</h2>
+                            <p class="project-role">Software Engineer</p>
                         </div>
                     </div>
                     <p class="project-description">
-                        Analyzed 200,000+ ultra-marathon records to uncover performance patterns using <strong>Python</strong> ecosystem (Pandas, Scikit-learn).
+                        A desktop IDE for a custom markup language that blends Markdown simplicity with LaTeX precision.
                         <br><br>
-                        Applied <strong>K-means clustering</strong> to identify distinct athlete groups across race categories. The findings, including performance trends over decades, were compiled into a detailed LaTeX report.
-                        <br><br><strong>Technologies:</strong> Python, K-means Clustering, Data Viz, LaTeX
+                        Features an <strong>ANTLR4</strong>-based compiler front-end and a <strong>JavaFX</strong> UI built on <strong>MVVM</strong> architecture. Uses the Visitor pattern to convert ASTs to Pandoc-compatible JSON for professional publishing.
+                        <br><br><strong>Technologies:</strong> Java, ANTLR4, JavaFX, MVVM, JUnit 5
                     </p>
                     <div class="action-links">
-                        <a href="https://github.com/Yinghao-Guan/FDS_CW3.git" class="btn" target="_blank">View on GitHub</a>
+                        <a href="https://github.com/Yinghao-Guan/MyMD" class="btn" target="_blank">GitHub</a>
                     </div>
                 </div>
             </article>
@@ -153,32 +159,20 @@
         .then(res => res.text())
         .then(data => {
             document.getElementById('nav-placeholder').innerHTML = data;
-
-            // --- 导航栏加载完成后的逻辑 ---
-
-            // A. 高亮当前页面
             const path = window.location.pathname;
             const navLinks = document.querySelectorAll('.nav-links a');
             navLinks.forEach(link => {
-                // 简单的包含匹配 (适配 /html/resume.html 和 /resume 等情况)
                 if (link.getAttribute('href') === path || (path === '/' && link.getAttribute('href') === '/index.html')) {
                     link.classList.add('active');
                 }
             });
-
-            // B. 汉堡菜单逻辑 (Mobile Menu)
             const burger = document.querySelector('.hamburger');
             const nav = document.querySelector('.nav-links');
             const navItems = document.querySelectorAll('.nav-links li');
-
             if (burger) {
                 burger.addEventListener('click', () => {
-                    // 切换菜单显示
                     nav.classList.toggle('nav-active');
-                    // 切换汉堡按钮动画 (变X)
                     burger.classList.toggle('toggle');
-
-                    // 列表项动画 (依次滑入)
                     navItems.forEach((link, index) => {
                         if (link.style.transitionDelay) {
                             link.style.transitionDelay = '';
@@ -187,8 +181,6 @@
                         }
                     });
                 });
-
-                // 点击链接后自动收起菜单
                 navItems.forEach(item => {
                     item.addEventListener('click', () => {
                         nav.classList.remove('nav-active');

@@ -1,4 +1,4 @@
-/* css/project.css - V5.0 (Masonry Layout + Ghost Buttons) */
+/* css/project.css - V5.1 (Masonry + Solid Buttons) */
 
 /* =================================================================== */
 /* 页面容器 */
@@ -60,7 +60,7 @@
 }
 
 /* =================================================================== */
-/* 瀑布流布局 (Masonry Layout) - 解决空白问题的核心 */
+/* 瀑布流布局 (Masonry Layout) */
 /* =================================================================== */
 
 .project-grid {
@@ -144,7 +144,6 @@
     padding: 35px;
     display: flex;
     flex-direction: column;
-    /* 注意：在瀑布流中 flex-grow 不会像 Grid 那样拉伸高度，这正是我们要的（紧凑） */
 }
 
 /* 标题 */
@@ -190,13 +189,14 @@
 
 .project-description strong { color: var(--accent-color); }
 
-/* --- 按钮区域 (Ghost Button Style) --- */
+/* --- 按钮区域 (Ghost & Solid Buttons) --- */
 .action-links {
     margin-top: auto;
     display: flex;
     gap: 1rem;
 }
 
+/* 基础按钮 (默认是空心 Ghost Button) */
 .btn {
     display: inline-block;
     padding: 10px 24px;
@@ -206,12 +206,9 @@
     text-decoration: none;
     transition: all 0.3s ease;
 
-    /* 回归经典设计：透明背景 + 蓝框 + 蓝字 */
     background-color: transparent;
     color: var(--accent-color) !important;
     border: 2px solid var(--accent-color);
-
-    /* 默认无阴影，保持干净 */
     box-shadow: none;
 }
 
@@ -220,7 +217,22 @@
     background-color: var(--accent-color);
     color: #FFFFFF !important;
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px var(--accent-glow); /* 此时才出现发光阴影 */
+    box-shadow: 0 8px 20px var(--accent-glow);
+}
+
+/* === 新增：实心按钮 (Primary Action) === */
+.btn.btn-solid {
+    background-color: var(--accent-color);
+    color: #FFFFFF !important;
+    border: 2px solid var(--accent-color);
+}
+
+.btn.btn-solid:hover {
+    background-color: #002387; /* 悬停时加深一点 */
+    border-color: #002387;
+    color: #FFFFFF !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px var(--accent-glow);
 }
 
 /* =================================================================== */
