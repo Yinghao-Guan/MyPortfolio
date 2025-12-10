@@ -1,106 +1,157 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+/* css/index.css - V2.1 */
 
-html, body {
-    min-height: 100vh; /* Set height to 100% of the viewport height */
-    /*overflow: hidden; /* Prevent scrolling */
-    font-family: 'Roboto', sans-serif;
-    background-color: var(--background-color);
-    color: var(--text-color);
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-}
-
-/* Main Content */
+/* 容器布局：占据 Header 和 Footer 之间的剩余空间 */
 .main-content {
-    flex-grow: 1; /* Allow main content to fill available space */
+    flex: 1; /* 关键：自动拉伸，填满屏幕 */
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 0 2rem;
+    justify-content: center; /* 垂直居中 */
+    align-items: flex-start; /* 左对齐 */
 
-    transform: translateY(40px);
+    padding: 0 15%; /* 左右留白 */
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+
+    /* 稍微向上提一点，视觉重心更稳 */
+    padding-top: var(--nav-height);
 }
 
+/* --- 巨大的 Hero 标题 --- */
 .main-content h1 {
-    font-size: 3rem;
+    font-size: clamp(3rem, 7vw, 5.5rem); /* 响应式字体 */
     font-weight: 700;
-    margin-bottom: 1rem;
+
+    /* 修复文字截断的关键 */
+    line-height: 1.25;
+    padding-bottom: 0.2em; /* 给 g, p, y 的尾巴留出空间 */
+    margin-bottom: 0.5rem; /* 调整间距 */
+
+    /* 渐变文字效果 */
+    background: linear-gradient(to right, var(--text-main), var(--text-muted));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* 如果背景裁剪失效，保证文字可见 */
+    color: var(--text-main);
 }
 
+/* --- 副标题 --- */
 .main-content p {
     font-size: 1.25rem;
+    color: var(--text-muted);
     max-width: 600px;
+    margin-bottom: 3rem;
+    font-weight: 400;
+    text-align: left;
 }
 
-/* Responsive Design Adjustments */
-@media (max-width: 768px) {
-
-    .main-content {
-        /* Add padding to prevent content from going under fixed header/footer */
-        padding-top: 5rem;
-        padding-bottom: 5rem;
-    }
-
-    .main-content h1 {
-        font-size: 2rem;
-    }
-
-    .main-content p {
-        font-size: 1rem;
-    }
-}
-
-/* --- 新增：按钮与链接样式 --- */
-
+/* --- 按钮组 --- */
 .action-links {
-    /* 与下方链接组的间距 */
-    margin-top: 2rem;
-    margin-bottom: 2rem;
     display: flex;
-    justify-content: center;
-    gap: 1rem; /* 两个按钮之间的间距 */
+    gap: 1.5rem;
 }
 
 .btn {
-    display: inline-block;
-    padding: 0.7rem 1.8rem; /* 按钮内边距，控制大小 */
-    border-radius: 8px; /* 圆角大小 */
-    text-decoration: none;
-    font-weight: bold; /* 字体加粗 */
-    font-size: 0.9rem;
-    transition: all 0.3s ease; /* 平滑过渡效果 */
-    border: 2px solid transparent; /* 边框，默认透明 */
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
 }
 
-/* 主要按钮样式 (实心) */
-.btn {
-    background-color: #002fa7; /* 背景色 - 深灰色 */
-    color: #F7F7F5; /* 文字颜色 - 白色 */
+/* 主按钮：浅色模式下是实心蓝，深色模式下是发光框 */
+.btn:not(.btn-secondary) {
+    background-color: transparent;
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+    /* 浅色模式下的微阴影 */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
-.btn:hover {
-    background-color: #002A9A; /* 一个比原来稍微深一点的蓝色 */
-    transform: translateY(-3px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+.btn:not(.btn-secondary):hover {
+    background-color: var(--accent-color);
+    color: var(--bg-card); /* 悬停后文字反白 (适配深浅模式) */
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px var(--accent-glow);
 }
 
-/* 次要按钮样式 (描边) */
-.btn.btn-secondary {
-    background-color: transparent; /* 背景透明 */
-    color: #002fa7; /* 文字颜色 - 深灰色 */
-    border: 2px solid #002fa7; /* 边框为深灰色 */
+/* 次按钮 */
+.btn-secondary {
+    color: var(--text-main);
+    background: transparent;
 }
 
-.btn.btn-secondary:hover {
-    background-color: #002fa7; /* 鼠标悬停时背景填充 */
-    color: #F7F7F5; /* 文字变白 */
+.btn-secondary:hover {
+    color: var(--accent-color);
+    transform: translateX(5px);
+}
+
+/* 针对深色模式的微调 (可选) */
+@media (prefers-color-scheme: dark) {
+    .main-content h1 {
+        /* 深色模式下，渐变从白到灰 */
+        background: linear-gradient(to right, #fff, #94a3b8);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+/* css/index.css - 添加到文件最底部 */
+
+/* --- 1. 定义动画关键帧 --- */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px); /* 初始位置：向下偏移30像素 */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);    /* 结束位置：回到原位 */
+    }
+}
+
+/* --- 2. 应用动画到元素 --- */
+
+/* 标题：最先出现 */
+.main-content h1 {
+    /* 保持你原有的样式 (font-size, gradient等) */
+
+    /* 新增动画属性 */
+    opacity: 0; /* 初始状态必须隐藏 */
+    animation: fadeUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    animation-delay: 0.1s; /* 稍微等一下再开始 */
+}
+
+/* 副标题：延迟 0.2秒 */
+.main-content p {
+    /* 保持原有样式 */
+
+    opacity: 0;
+    animation: fadeUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    animation-delay: 0.3s; /* 比标题晚一点 */
+}
+
+/* 按钮组：延迟 0.4秒 */
+.action-links {
+    /* 保持原有样式 */
+
+    opacity: 0;
+    animation: fadeUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    animation-delay: 0.5s; /* 最后出现 */
+}
+
+.hero-name {
+    font-family: 'Playfair Display', serif; /* 使用标题同款的高级衬线体 */
+    font-weight: 700;
+    font-size: 1.5em; /* 比周围文字大 1.5 倍 */
+    color: var(--text-main); /* 也就是深黑色/亮白色，而不是灰色的 muted */
+    position: relative;
+    top: 3px; /* 微调垂直位置，因为它变大了 */
+    margin: 0 5px; /* 左右留点呼吸空间 */
+
+    /* 可选：加个下划线强调 */
+    /* border-bottom: 2px solid var(--accent-color); */
 }

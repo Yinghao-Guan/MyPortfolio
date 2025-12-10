@@ -18,59 +18,78 @@
 <div id="nav-placeholder"></div>
 
 <main class="main-content">
-    <h1>Hi, I’m Peter Guan.</h1>
-    <p>A developer and researcher passionate about Human-Computer Interaction and Web3.</p>
+    <h1>Building Logic.<br>Designing Empathy.</h1>
+    <p>
+        I’m <span class="hero-name">Peter Guan</span>. A developer and researcher bridging the gap between
+        <strong>Human-Computer Interaction</strong> and <strong>Web3</strong>.
+    </p>
+
     <div class="action-links">
-        <a href="/html/project.html" class="btn">See Projects</a>
-        <a href="/html/about.html" class="btn btn-secondary">About me</a>
+        <a href="/html/project.html" class="btn">View My Work</a>
+        <a href="/html/about.html" class="btn btn-secondary">Read My Story &rarr;</a>
     </div>
 </main>
 
 <div id="footer-placeholder"></div>
 
 <script>
-    // 加载导航栏
+    // 1. 加载导航栏
     fetch('/html/nav.html')
         .then(res => res.text())
         .then(data => {
             document.getElementById('nav-placeholder').innerHTML = data;
+
+            // --- 导航栏加载完成后的逻辑 ---
+
+            // A. 高亮当前页面
+            const path = window.location.pathname;
+            const navLinks = document.querySelectorAll('.nav-links a');
+            navLinks.forEach(link => {
+                // 简单的包含匹配 (适配 /html/resume.html 和 /resume 等情况)
+                if (link.getAttribute('href') === path || (path === '/' && link.getAttribute('href') === '/index.html')) {
+                    link.classList.add('active');
+                }
+            });
+
+            // B. 汉堡菜单逻辑 (Mobile Menu)
+            const burger = document.querySelector('.hamburger');
+            const nav = document.querySelector('.nav-links');
+            const navItems = document.querySelectorAll('.nav-links li');
+
+            if (burger) {
+                burger.addEventListener('click', () => {
+                    // 切换菜单显示
+                    nav.classList.toggle('nav-active');
+                    // 切换汉堡按钮动画 (变X)
+                    burger.classList.toggle('toggle');
+
+                    // 列表项动画 (依次滑入)
+                    navItems.forEach((link, index) => {
+                        if (link.style.transitionDelay) {
+                            link.style.transitionDelay = '';
+                        } else {
+                            link.style.transitionDelay = `${index * 0.1 + 0.1}s`;
+                        }
+                    });
+                });
+
+                // 点击链接后自动收起菜单
+                navItems.forEach(item => {
+                    item.addEventListener('click', () => {
+                        nav.classList.remove('nav-active');
+                        burger.classList.remove('toggle');
+                        navItems.forEach(link => link.style.transitionDelay = '');
+                    });
+                });
+            }
         });
 
-    // 加载页脚
+    // 2. 加载页脚
     fetch('/html/footer.html')
         .then(res => res.text())
         .then(data => {
             document.getElementById('footer-placeholder').innerHTML = data;
         });
-</script>
-
-<script>
-    // --- 更新后的导航栏激活状态处理脚本 ---
-    document.addEventListener('DOMContentLoaded', function() {
-        // 等待导航栏加载完毕
-        setTimeout(() => {
-            const currentPagePath = window.location.pathname;
-            const navLinks = document.querySelectorAll('.nav-links a');
-
-            navLinks.forEach(link => {
-                const linkPath = new URL(link.href).pathname;
-
-                if (currentPagePath === linkPath || (currentPagePath === '/' && linkPath === '/index.html')) {
-                    link.classList.add('active');
-                    link.setAttribute('aria-current', 'page');
-
-                    // 当点击当前页面的导航链接时，平滑滚动到页面顶部
-                    link.addEventListener('click', (event) => {
-                        event.preventDefault(); // 阻止链接的默认刷新行为
-                        window.scrollTo({
-                            top: 0,
-                            behavior: 'smooth'
-                        });
-                    });
-                }
-            });
-        }, 100); // 延迟以确保 nav.html 加载完成
-    });
 </script>
 </body>
 

@@ -1,190 +1,311 @@
-/* --- 通用和基础样式 --- */
-body {
-    background-color: #F7F7F5; /* 整体背景颜色 */
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    color: var(--text-color);
-}
+/* css/resume.css - V2.0 (Web + Print Ready) */
 
-/* --- 主要内容容器 --- */
+/* =================================================================== */
+/* 🌐 1. Web 视图样式 (屏幕显示) */
+/* =================================================================== */
+
+/* 页面容器 */
 .resume-bg-container {
-    background-color: var(--background-color);
-    padding: 100px 0;
-
+    /* 移除背景色，直接使用 body 的背景 */
+    background-color: transparent;
+    padding-top: var(--nav-height); /* 给固定导航栏留位 */
+    padding-bottom: 60px;
+    min-height: 100vh;
 }
 
 .resume-container {
-    max-width: 980px; /* 限制最大宽度 */
-    margin: 0 auto; /* 改为0 auto，顶部间距由header控制 */
+    max-width: 900px; /* 简历稍微窄一点，阅读体验更好 */
+    margin: 0 auto;
     padding: 0 40px;
-
 }
 
-/* --- "Resume" 主标题 --- */
+/* --- 页面主标题 --- */
 .resume-main-header {
     display: flex;
     align-items: center;
-    justify-content: center; /* 新增：使内容水平居中 */
-    margin-top: 80px; /* 新增：与顶部导航栏的间距 */
+    justify-content: center;
+    margin-top: 60px;
     margin-bottom: 60px;
+
+    /* 动画 */
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards;
 }
 
+/* 装饰方块 */
 .title-decorator {
     display: inline-block;
-    width: 16px; /* 修改：放大方块 */
-    height: 16px; /* 修改：放大方块 */
-    background-color: var(--primary-color);
-    margin-right: 18px; /* 方块和文字的间距 */
+    width: 12px;
+    height: 12px;
+    background-color: var(--accent-color);
+    margin-right: 15px;
+    border-radius: 2px;
 }
 
 .resume-main-header h1 {
     font-size: 2.5rem;
     margin: 0;
-    font-weight: 700;
 }
 
-/* --- "Experience" 标题和下载按钮 --- */
+/* --- 板块标题 (Education, Experience...) --- */
 .experience-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
+    margin-top: 60px; /* 板块间距 */
+
+    border-bottom: 2px solid rgba(0,0,0,0.05); /* 浅浅的分隔线 */
+    padding-bottom: 10px;
+}
+
+/* 深色模式下的分隔线微调 */
+@media (prefers-color-scheme: dark) {
+    .experience-header { border-bottom-color: rgba(255,255,255,0.05); }
 }
 
 .experience-header h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
     margin: 0;
-    font-weight: 700;
 }
 
+/* --- 下载按钮 --- */
 .download-button {
-    background-color: var(--primary-color);
-    color: #FFFFFF;
+    background-color: transparent;
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
     text-decoration: none;
-    padding: 12px 28px;
-    border-radius: 50px;
-    font-weight: bold;
+    padding: 8px 20px;
+    border-radius: 6px;
+    font-weight: 600;
     font-size: 0.9rem;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .download-button:hover {
-    background-color: #002482; /* 修改：新的主题色的悬停加深效果 */
+    background-color: var(--accent-color);
+    color: var(--bg-card); /* 反白 */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px var(--accent-glow);
 }
 
-/* --- 经验卡片 --- */
-.experience-card {
-    background-color: var(--card-bg);
-    padding: 40px;
-    /*border-radius: 8px;*/
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+/* --- 经验卡片 (Web 样式) --- */
+.experience-card, .skill-card {
+    background-color: var(--bg-card);
+    padding: 35px;
+    border-radius: var(--radius, 12px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02); /* 默认极浅阴影 */
+    border: 1px solid rgba(0,0,0,0.03); /* 极细边框增加质感 */
+
     display: flex;
     gap: 40px;
+    margin-bottom: 25px;
 
-    /* --- 新增：为卡片添加下边距以创建间距 --- */
-    margin-bottom: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* (推荐) 新增：移除最后一个卡片的下边距，让布局更规整 */
-.experience-card:last-child {
-    margin-bottom: 0;
+/* 深色模式边框微调 */
+@media (prefers-color-scheme: dark) {
+    .experience-card, .skill-card { border-color: rgba(255,255,255,0.05); }
 }
 
-/* --- 卡片左侧：职位详情 --- */
+/* 悬停效果 */
+.experience-card:hover, .skill-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* 卡片布局 */
 .experience-details {
     flex-basis: 220px;
     flex-shrink: 0;
+    border-right: 1px solid rgba(0,0,0,0.05); /* 竖线分隔 */
+    padding-right: 20px;
+}
+@media (prefers-color-scheme: dark) {
+    .experience-details { border-right-color: rgba(255,255,255,0.05); }
 }
 
-.experience-details p {
-    margin: 0 0 10px 0;
-}
-
-.date-range {
-    font-weight: bold;
-    color: var(--primary-color);
-    font-size: 1.1rem;
-    margin-bottom: 20px !important;
-}
-
-.job-position {
-    font-weight: bold;
-    font-size: 1.1rem;
-}
-
-.company-info {
-    color: #6c757d;
-    font-size: 1rem;
-}
-
-/* --- 卡片右侧：描述 --- */
 .experience-description {
     flex-grow: 1;
 }
 
-.experience-description p {
+/* 文字排版 */
+.date-range {
+    font-weight: 600;
+    color: var(--accent-color);
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.job-position {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--text-main);
+    margin-bottom: 5px;
+}
+
+.company-info {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+.experience-description ul {
+    padding-left: 20px;
     margin: 0;
+}
+
+.experience-description li {
+    margin-bottom: 8px;
+    color: var(--text-main);
+}
+
+.experience-description li:last-child { margin-bottom: 0; }
+
+/* 技能卡片特殊布局 */
+.skill-card { align-items: flex-start; }
+.skill-details h3 {
     font-size: 1rem;
-    line-height: 1.7;
-    color: #333;
+    color: var(--accent-color);
+    margin: 0;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
+.skill-card .experience-description { font-family: 'Plus Jakarta Sans', sans-serif; }
 
-.experience-description ul{
-    font-size: 1rem;
-    line-height: 1.7;
-}
 
-.experience-card + .experience-header {
-    margin-top: 70px; /* 您可以根据喜好调整这个数值 */
-}
-
-.skill-card {
-    background-color: var(--card-bg);
-    padding: 40px;
-    /*border-radius: 8px;*/
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-    display: flex;
-    gap: 40px;
-
-    margin-bottom: 40px;
-}
-
-.skill-details{
-    /*flex-basis: 220px;*/
-    flex-shrink: 0;
-}
-
-.skill-details h3{
-    color: var(--primary-color);
-    margin-bottom: 20px;
-}
-
-/* --- 响应式设计：小屏幕设备 --- */
+/* 响应式适配 */
 @media (max-width: 768px) {
-    .resume-main-header {
-        margin-bottom: 20px;
+    .experience-card, .skill-card { flex-direction: column; gap: 15px; }
+    .experience-details { border-right: none; border-bottom: 1px solid rgba(0,0,0,0.05); padding-bottom: 15px; padding-right: 0; flex-basis: auto; }
+}
+
+
+/* =================================================================== */
+/* 🖨️ 2. Print 视图样式 (Ctrl + P 专用) */
+/* =================================================================== */
+
+@media print {
+    @page {
+        margin: 0.8cm; /* 稍微减小页边距，利用更多空间 */
+        size: auto;
     }
 
-    .experience-header {
-        flex-direction: column-reverse;
+    /* 隐藏无关元素 */
+    .navbar, .footer, .download-button, .title-decorator, #nav-placeholder, #footer-placeholder {
+        display: none !important;
+    }
 
-        align-items: center;
-        gap: 40px;
-        margin-bottom: 40px;
+    /* 重置容器 */
+    body {
+        background-color: white !important;
+        color: black !important;
+        font-size: 10.5pt;
+        line-height: 1.2; /* 基础行高 */
+    }
+
+    .resume-bg-container { padding: 0 !important; }
+    .resume-container { max-width: 100% !important; padding: 0 !important; margin: 0 !important; }
+
+    /* --- 标题区域 --- */
+    .resume-main-header {
+        margin: 0 0 10px 0 !important; /* 减小头部下方间距 */
+        text-align: left !important;
+        justify-content: flex-start !important;
+        border-bottom: 2px solid black;
+        padding-bottom: 5px;
+    }
+
+    .resume-main-header h1 {
+        font-size: 22pt !important;
+        color: black !important;
+        margin-bottom: 2px !important;
+    }
+    .resume-main-header p {
+        margin: 0 !important;
+        color: #444 !important;
+    }
+
+    /* --- 板块标题 (Education, Experience...) --- */
+    .experience-header {
+        margin-top: 12px !important; /* 稍微拉近板块间距 */
+        margin-bottom: 6px !important;
+        border-bottom: 1px solid #333 !important;
+        padding-bottom: 2px;
     }
 
     .experience-header h2 {
-        align-self: flex-start;
+        font-size: 12pt !important;
+        color: black !important;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin: 0 !important;
     }
 
+    /* --- 核心内容卡片 --- */
+    .experience-card, .skill-card {
+        background: none !important;
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
 
-    .experience-card {
-        flex-direction: column;
-        padding: 30px;
-        gap: 0;
+        /* 关键修改：大幅减小卡片之间的间距，让它们看起来像一个整体列表 */
+        margin-bottom: 6px !important;
+
+        display: flex !important;
+        page-break-inside: avoid;
+        gap: 15px !important;
     }
 
+    /* 左侧列 (时间/地点) */
     .experience-details {
-        flex-basis: auto;
-        margin-bottom: 10px;
+        flex-basis: 140px !important;
+        min-width: 140px !important;
+        border-right: none !important;
+        padding-right: 0 !important;
     }
+
+    .date-range { color: #000 !important; font-weight: bold !important; margin-bottom: 0 !important; font-size: 9pt !important; }
+    .job-position { font-size: 10.5pt !important; color: #000 !important; font-weight: bold !important; margin: 0 !important; }
+    .company-info { color: #333 !important; font-size: 9pt !important; font-style: italic; margin: 0 !important; }
+
+    /* 右侧列 (描述/列表) */
+    .experience-description {
+        flex: 1;
+    }
+
+    /* 关键修改：平衡行间距和段间距 */
+    .experience-description p,
+    .experience-description ul {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+        margin-bottom: 3px !important; /* 段落间只有微小间距 */
+    }
+
+    .experience-description ul {
+        padding-left: 15px !important;
+    }
+
+    .experience-description li {
+        color: #000 !important;
+        line-height: 1.45; /* 增加行距，让文字不那么挤，视觉上“撑开”同一块内容 */
+        margin-bottom: 1px !important;
+    }
+
+    /* Skills 特殊紧凑排版 */
+    .skill-card {
+        margin-bottom: 4px !important;
+        gap: 10px !important;
+        align-items: baseline !important;
+    }
+    .skill-card .experience-details {
+        flex-basis: auto !important;
+        width: auto !important;
+        min-width: 110px;
+    }
+    .skill-card .experience-details h3::after { content: ":"; }
+    .skill-card .experience-description p { margin: 0 !important; line-height: 1.4 !important; }
 }

@@ -3,13 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects</title>
+    <title>Projects | Peter Guan</title>
     <link rel="icon" type="image/png" href="/assets/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
     <link rel="shortcut icon" href="/assets/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="Peter Guan" />
-    <link rel="manifest" href="/assets/site.webmanifest" />
     <link rel="stylesheet" href="/css/common.css">
     <link rel="stylesheet" href="/css/project.css">
 </head>
@@ -19,19 +16,24 @@
 
 <div class="page-bg-container">
     <main class="page-container">
+
         <header class="project-main-header">
             <div class="header-title-wrapper">
                 <span class="title-decorator"></span>
-                <h1>Projects</h1>
+                <h1>Selected Work</h1>
             </div>
             <p class="header-intro-text">
-                From data-driven analysis to full-stack applications and cutting-edge AI integrations. Here is a detailed look at some of the projects I'm most proud of.
+                From data-driven analysis to full-stack applications and cutting-edge AI integrations.
             </p>
         </header>
 
         <div class="project-grid">
 
-            <article class="project-card">
+            <article class="project-card" style="animation-delay: 0.2s;">
+                <div class="project-image-content project-image-contain">
+                    <img src="/img/Demo.png" alt="MyMD Editor Interface">
+                </div>
+
                 <div class="project-text-content">
                     <div class="project-heading">
                         <div class="title-vertical-bar"></div>
@@ -41,24 +43,18 @@
                         </div>
                     </div>
                     <p class="project-description">
-                        This project was born from a personal need for a tool that blends the simplicity and speed of <strong>Markdown</strong> with the professional typesetting and citation capabilities of <strong>LaTeX</strong>. To fill this gap, I independently designed and developed MyMD, a custom markup language, along with its dedicated desktop editor.
+                        This project was born from a personal need for a tool that blends the simplicity of <strong>Markdown</strong> with the typesetting of <strong>LaTeX</strong>. I developed MyMD and its dedicated desktop editor.
                         <br><br>
-                        The application's core is a compiler front-end built with <strong>ANTLR</strong>, which accurately parses MyMD source into an Abstract Syntax Tree (AST). Pivoting from an initial, unstable regex-based prototype, the current architecture uses the Visitor pattern to convert the AST into a <strong>Pandoc</strong>-compatible JSON format. This decouples the parser from the back-end, enabling robust and seamless export to HTML and LaTeX. The entire desktop application was built from the ground up using <strong>JavaFX</strong> and follows the <strong>MVVM</strong> architecture to ensure a clean, testable, and extensible codebase, with reliability backed by a suite of <strong>JUnit 5</strong> unit tests.
-                        <br><br>
-                        Currently, the project is a Minimum Viable Product (MVP) with a live-preview editor. The long-term vision is to evolve it from a simple GUI into a full-featured Integrated Development Environment (IDE).
-                        <br><br><strong>Technologies:</strong> Java, JavaFX, ANTLR, MVVM, JUnit 5, Maven, Pandoc
+                        Core features include an <strong>ANTLR</strong>-based compiler front-end and a <strong>JavaFX</strong> UI built on <strong>MVVM</strong> architecture. It uses the Visitor pattern to convert ASTs to Pandoc-compatible JSON, bridging the gap between casual writing and professional publishing.
+                        <br><br><strong>Technologies:</strong> Java, JavaFX, ANTLR, MVVM, JUnit 5, Maven
                     </p>
-
-                    <div class="action-links" style="justify-content: flex-start; margin-top: 2rem;">
-                        <a href="https://github.com/Yinghao-Guan/MyMD" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                    <div class="action-links">
+                        <a href="https://github.com/Yinghao-Guan/MyMD" class="btn" target="_blank">View on GitHub</a>
                     </div>
-                </div>
-                <div class="project-image-content project-image-contain">
-                    <img src="/img/Demo.png" alt="MyMD Custom Markup Editor Screenshot">
                 </div>
             </article>
 
-            <article class="project-card text-only-card">
+            <article class="project-card" style="animation-delay: 0.3s;">
                 <div class="project-text-content">
                     <div class="project-heading">
                         <div class="title-vertical-bar"></div>
@@ -68,87 +64,80 @@
                         </div>
                     </div>
                     <p class="project-description">
-                        In collaboration with a faculty member at UCLA, I am leading a research project investigating the effects of <strong>eXplainable AI (XAI)</strong> on user trust and perceived empathy in emotional support conversational agents. This work addresses a critical challenge in <strong>Human-Computer Interaction (HCI)</strong>: the "black box" nature of AI systems, which can hinder the development of a supportive human-AI relationship in sensitive contexts.
+                        Leading a research project investigating the effects of <strong>eXplainable AI (XAI)</strong> on user trust and perceived empathy in emotional support chatbots.
                         <br><br>
-                        The core research question is: How does providing AI-generated explanations for its emotion detection affect a user's trust and sense of connection? To answer this, I have designed a comparative user study employing an <strong>A/B testing</strong> methodology. This involves prototyping two versions of a chatbot: an XAI version that transparently explains its emotional inference and allows users to correct it, and a non-XAI control version. The project is currently in the foundational phase, which involves conducting an in-depth literature review and formalising the research methodology.
-                        <br><br>
-                        A key innovation of this study is its focus on <strong>user agency</strong>, exploring how the ability to correct the AI's predictions can help repair interactional breakdowns and foster a more collaborative human-AI partnership. The expected outcome is a set of evidence-based design guidelines and a research paper suitable for submission to a peer-reviewed HCI conference or journal.
-                        <br><br><strong>Fields:</strong> Human-Computer Interaction, Explainable AI, Large Language Models, User-Centred Design
+                        Designed an <strong>A/B testing</strong> study comparing transparent XAI models vs. black-box controls. The research explores how <strong>user agency</strong>—the ability to correct AI predictions—can repair interactional breakdowns and foster trust.
+                        <br><br><strong>Fields:</strong> HCI, Explainable AI, LLMs, User-Centred Design
                     </p>
-
-                    <div class="action-links" style="justify-content: flex-start; margin-top: 2rem;">
-                        <a href="https://github.com/Yinghao-Guan/HCI_Chatbot_Prototype.git" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View Prototype on GitHub</a>
+                    <div class="action-links">
+                        <a href="https://github.com/Yinghao-Guan/HCI_Chatbot_Prototype.git" class="btn" target="_blank">View Prototype</a>
                     </div>
                 </div>
             </article>
 
-            <article class="project-card text-only-card">
+            <article class="project-card" style="animation-delay: 0.4s;">
                 <div class="project-text-content">
                     <div class="project-heading">
                         <div class="title-vertical-bar"></div>
                         <div class="title-text-group">
                             <h2>Behavioural Modelling of Excessive Trading</h2>
-                            <p class="project-role">Lead Developer / Quantitative Analyst</p>
+                            <p class="project-role">Lead Developer / Quant Analyst</p>
                         </div>
                     </div>
                     <p class="project-description">
-                        This project was sparked by observing the tech market's sharp downturn following the release of the DeepSeek model, which seemed to defy rational market theory. It led me to question: what behavioural drivers lead to such excessive trading? This study was designed to quantitatively model the impact of psychological biases on trading activity.
+                        Quantitatively modelled the impact of psychological biases on excessive trading, sparked by market reactions to DeepSeek.
                         <br><br>
-                        As the architect of the technical pipeline, my greatest challenge was not just implementing the model, but selecting the correct observable indicators to accurately measure latent behaviours. I built a hybrid data analysis workflow, using <strong>Python</strong> (pandas) for data cleaning and engineering a mixed-language environment in WSL to integrate <strong>R</strong> (via rpy2) for the core <strong>Partial Least Squares Structural Equation Modelling (PLS-SEM)</strong>.
-                        <br><br>
-                        The model successfully validated that behavioural biases have a significant impact on excessive trading. Notably, while Herding and Anchoring were influential, the analysis revealed that <strong>Fear of Missing Out (FoMO)</strong> was by far the most powerful predictive factor. The anonymised analysis code for this study is available on GitHub.
-                        <br><br><strong>Technologies:</strong> Python, R, pandas, PLS-SEM, rpy2, Matplotlib, Seaborn
+                        Architected a hybrid pipeline using <strong>Python</strong> (pandas) for data engineering and <strong>R</strong> (via rpy2) for <strong>PLS-SEM modelling</strong>. The study validated that <strong>Fear of Missing Out (FoMO)</strong> was the strongest predictive factor for irrational trading behavior.
+                        <br><br><strong>Technologies:</strong> Python, R, PLS-SEM, rpy2, Matplotlib
                     </p>
-
-                    <div class="action-links" style="justify-content: flex-start; margin-top: 2rem;">
-                        <a href="https://github.com/Yinghao-Guan/DeepSeek-Analysis.git" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                    <div class="action-links">
+                        <a href="https://github.com/Yinghao-Guan/DeepSeek-Analysis.git" class="btn" target="_blank">View on GitHub</a>
                     </div>
                 </div>
             </article>
 
-            <article class="project-card">
+            <article class="project-card" style="animation-delay: 0.5s;">
+                <div class="project-image-content project-image-contain">
+                    <img src="/img/UMLCLASS.svg" alt="UML Class Diagram">
+                </div>
                 <div class="project-text-content">
                     <div class="project-heading">
                         <div class="title-vertical-bar"></div>
                         <div class="title-text-group">
                             <h2>Hierarchical University FAQ System</h2>
-                            <p class="project-role">Team Member / Software Developer</p>
+                            <p class="project-role">Software Developer</p>
                         </div>
                     </div>
                     <p class="project-description">
-                        As part of a four-person team in a university software engineering course, I co-developed the back-end for a hierarchical FAQ system designed for university kiosks. The project's goal was to provide students with quick, accessible answers and route unanswered queries to staff.
+                        Co-developed a backend for a university kiosk system. The process followed a strict SDLC, starting with user interviews and detailed <strong>UML</strong> modeling.
                         <br><br>
-                        Our process mirrored a standard software development lifecycle. We began by conducting simulated user interviews to gather requirements, which informed our system design. A key academic requirement was to model our architecture with <strong>UML</strong> (use case, sequence, and class diagrams) before writing any code. As a developer on the team, I was jointly responsible for implementing the back-end logic in <strong>Java</strong> following the <strong>MVC architecture</strong>. This included authoring the search module, which used <storng>Lucene</storng> for keyword matching, and ensuring our code was thoroughly tested with <strong>JUnit</strong>.
-                        <br><br><strong>Technologies:</strong> Java, MVC, Lucene, UML, Git, JUnit
+                        Implemented the backend in <strong>Java</strong> using <strong>MVC architecture</strong>. I authored the search module using <strong>Lucene</strong> for efficient keyword matching and ensured stability with <strong>JUnit</strong> testing.
+                        <br><br><strong>Technologies:</strong> Java, MVC, Lucene, UML, Git
                     </p>
-                </div>
-                <div class="project-image-content">
-                    <img src="/img/UMLCLASS.svg" alt="FAQ System UML Class Diagram">
                 </div>
             </article>
 
-            <article class="project-card">
+            <article class="project-card" style="animation-delay: 0.6s;">
+                <div class="project-image-content project-image-contain">
+                    <img src="/img/q1.png" alt="Data Visualization">
+                </div>
                 <div class="project-text-content">
                     <div class="project-heading">
                         <div class="title-vertical-bar"></div>
                         <div class="title-text-group">
-                            <h2>Ultra Marathon Runner Performance Analysis</h2>
-                            <p class="project-role">Independent Data Analyst</p>
+                            <h2>Ultra Marathon Performance Analysis</h2>
+                            <p class="project-role">Data Analyst</p>
                         </div>
                     </div>
                     <p class="project-description">
-                        In this independent data analysis project, I investigated a Kaggle dataset of over 200,000 ultra-marathon records to uncover performance patterns over time. The primary goal was to explore how factors like event year, distance, and club affiliation correlated with athlete performance.
+                        Analyzed 200,000+ ultra-marathon records to uncover performance patterns using <strong>Python</strong> ecosystem (Pandas, Scikit-learn).
                         <br><br>
-                        Using <strong>Python</strong> libraries such as <strong>Pandas</strong>, <strong>Matplotlib</strong>, and <strong>Scikit-learn</strong>, I cleaned and preprocessed the extensive dataset. I then applied <strong>K-means clustering</strong> and identified three distinct performance groups across the 50km, 100km, 50mi, and 100mi race categories. The analysis revealed a general trend of improving performance in recent years, with a notable exception in the 100km category, where the mid-century (c. 1950-1990) cluster of runners demonstrated the strongest results. Further linear regression analysis on club affiliation uncovered more nuanced trends, compiling all findings into a detailed report written in <strong>LaTeX</strong>.
-                        <br><br><strong>Technologies:</strong> Python, Pandas, Matplotlib, Scikit-learn, K-means Clustering, LaTeX
+                        Applied <strong>K-means clustering</strong> to identify distinct athlete groups across race categories. The findings, including performance trends over decades, were compiled into a detailed LaTeX report.
+                        <br><br><strong>Technologies:</strong> Python, K-means Clustering, Data Viz, LaTeX
                     </p>
-
-                    <div class="action-links" style="justify-content: flex-start; margin-top: 2rem;">
-                        <a href="https://github.com/Yinghao-Guan/FDS_CW3.git" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                    <div class="action-links">
+                        <a href="https://github.com/Yinghao-Guan/FDS_CW3.git" class="btn" target="_blank">View on GitHub</a>
                     </div>
-                </div>
-                <div class="project-image-content">
-                    <img src="/img/q1.png" alt="Data Visualization Chart from Marathon Analysis">
                 </div>
             </article>
 
@@ -159,45 +148,63 @@
 <div id="footer-placeholder"></div>
 
 <script>
-    // --- Load Navigation and Footer ---
+    // 1. 加载导航栏
     fetch('/html/nav.html')
         .then(res => res.text())
         .then(data => {
             document.getElementById('nav-placeholder').innerHTML = data;
+
+            // --- 导航栏加载完成后的逻辑 ---
+
+            // A. 高亮当前页面
+            const path = window.location.pathname;
+            const navLinks = document.querySelectorAll('.nav-links a');
+            navLinks.forEach(link => {
+                // 简单的包含匹配 (适配 /html/resume.html 和 /resume 等情况)
+                if (link.getAttribute('href') === path || (path === '/' && link.getAttribute('href') === '/index.html')) {
+                    link.classList.add('active');
+                }
+            });
+
+            // B. 汉堡菜单逻辑 (Mobile Menu)
+            const burger = document.querySelector('.hamburger');
+            const nav = document.querySelector('.nav-links');
+            const navItems = document.querySelectorAll('.nav-links li');
+
+            if (burger) {
+                burger.addEventListener('click', () => {
+                    // 切换菜单显示
+                    nav.classList.toggle('nav-active');
+                    // 切换汉堡按钮动画 (变X)
+                    burger.classList.toggle('toggle');
+
+                    // 列表项动画 (依次滑入)
+                    navItems.forEach((link, index) => {
+                        if (link.style.transitionDelay) {
+                            link.style.transitionDelay = '';
+                        } else {
+                            link.style.transitionDelay = `${index * 0.1 + 0.1}s`;
+                        }
+                    });
+                });
+
+                // 点击链接后自动收起菜单
+                navItems.forEach(item => {
+                    item.addEventListener('click', () => {
+                        nav.classList.remove('nav-active');
+                        burger.classList.remove('toggle');
+                        navItems.forEach(link => link.style.transitionDelay = '');
+                    });
+                });
+            }
         });
 
+    // 2. 加载页脚
     fetch('/html/footer.html')
         .then(res => res.text())
         .then(data => {
             document.getElementById('footer-placeholder').innerHTML = data;
         });
-
-
-    // --- 更新后的导航栏激活状态处理脚本 ---
-    document.addEventListener('DOMContentLoaded', function() {
-        setTimeout(() => {
-            const currentPagePath = window.location.pathname;
-            const navLinks = document.querySelectorAll('.nav-links a');
-
-            navLinks.forEach(link => {
-                const linkPath = new URL(link.href).pathname;
-                if (currentPagePath.includes(linkPath)) {
-                    link.classList.add('active');
-                    link.setAttribute('aria-current', 'page');
-
-                    // 当点击当前页面的导航链接时，平滑滚动到页面顶部
-                    link.addEventListener('click', (event) => {
-                        event.preventDefault(); // 阻止链接的默认刷新行为
-                        window.scrollTo({
-                            top: 0,
-                            behavior: 'smooth'
-                        });
-                    });
-                }
-            });
-        }, 100);
-    });
 </script>
-
 </body>
 </html>

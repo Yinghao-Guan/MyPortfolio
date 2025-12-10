@@ -1,44 +1,48 @@
-/* css/about.css */
+/* css/about.css - V2.0 */
 
 /* =================================================================== */
-/* General Page Layout */
+/* 页面容器 */
 /* =================================================================== */
 
 .page-bg-container {
-    background-color: var(--background-color);
-    padding: 180px 0 80px 0;
-    min-height: 80vh; /* Ensures the background covers most of the view height */
+    background-color: transparent; /* 背景交给 body */
+    padding-top: var(--nav-height);
+    padding-bottom: 80px;
+    min-height: 100vh;
 }
 
 .page-container {
-    max-width: 980px;
+    max-width: 900px; /* 限制宽度，提升阅读舒适度 */
     margin: 0 auto;
     padding: 0 40px;
 }
 
 /* =================================================================== */
-/* "About Me" Header */
+/* 头部区域 */
 /* =================================================================== */
 
 .about-main-header {
     text-align: center;
-    margin-bottom: 80px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    opacity: 0;
+    animation: fadeUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
 .header-title-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 24px;
+    margin-bottom: 10px;
 }
 
 .title-decorator {
     display: inline-block;
-    width: 16px;
-    height: 16px;
-    background-color: #002FA7;
-    margin-right: 18px;
-    flex-shrink: 0;
+    width: 12px;
+    height: 12px;
+    background-color: var(--accent-color);
+    margin-right: 15px;
+    border-radius: 2px;
 }
 
 .about-main-header h1 {
@@ -48,73 +52,141 @@
 }
 
 /* =================================================================== */
-/* About Content Grid (Image + Text) */
+/* 关于卡片 (About Cards) */
 /* =================================================================== */
 
-.about-content-grid {
-    display: grid;
-    grid-template-columns: 220px 1fr; /* Fixed width for image, remaining for text */
-    gap: 60px; /* Increased gap for better visual separation */
-    align-items: flex-start; /* Aligns items to the top of the grid */
-    background-color: var(--card-bg);
-    padding: 60px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+.about-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* 卡片之间的间距 */
 }
 
-.about-image-container img {
+.about-card {
+    background-color: var(--bg-card);
+    border-radius: var(--radius, 12px);
+
+    /* 核心质感：边框 + 阴影 */
+    border: 1px solid rgba(0,0,0,0.05);
+    box-shadow: var(--shadow);
+
+    padding: 50px;
+    overflow: hidden;
+
+    opacity: 0;
+    animation: fadeUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 深色模式边框 */
+@media (prefers-color-scheme: dark) {
+    .about-card { border-color: rgba(255,255,255,0.05); }
+}
+
+.about-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+/* --- 卡片 1: 个人简介 (图文并排) --- */
+.profile-section {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+}
+
+/* Logo 容器 */
+.logo-wrapper {
+    flex-shrink: 0;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%; /* 圆形头像风格 */
+    padding: 5px;
+    border: 2px solid var(--accent-color); /* 强调色边框 */
+    box-shadow: 0 0 20px var(--accent-glow); /* 发光效果 */
+    background-color: var(--bg-body);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-wrapper img {
     width: 100%;
-    height: auto;
-    border-radius: 8px; /* Slightly rounded corners for the image */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
 }
 
-.about-text-container h2 {
+/* 文本区域 */
+.text-content {
+    flex: 1;
+}
+
+.about-card h2 {
     font-size: 1.8rem;
-    font-weight: 700;
-    margin-bottom: 24px;
-    color: var(--primary-color);
+    margin: 0 0 25px 0;
+    color: var(--text-main);
+    position: relative;
+    display: inline-block;
 }
 
-.about-text-container p {
-    font-size: 1rem;
+/* 标题下划线装饰 */
+.about-card h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+}
+
+.about-card p {
+    font-size: 1.05rem;
     line-height: 1.8;
-    color: #333;
+    color: var(--text-main);
+    opacity: 0.9;
     margin-bottom: 20px;
+    text-align: justify; /* 两端对齐，显得更整洁 */
 }
 
-.about-text-container p:last-child {
+.about-card p:last-child {
     margin-bottom: 0;
 }
 
+/* --- 卡片 2: 个人生活 (纯文本) --- */
+/* 复用上面的通用样式，不需要额外定义 */
+
+
 /* =================================================================== */
-/* Responsive Design */
+/* 响应式调整 */
 /* =================================================================== */
 
 @media (max-width: 768px) {
-    .page-bg-container {
-        padding: 120px 0 60px 0;
-    }
+    .page-container { padding: 0 20px; }
 
-    .page-container {
-        padding: 0 20px;
-    }
+    .about-card { padding: 30px; }
 
-    .about-main-header {
-        margin-bottom: 60px;
-    }
-
-    .about-content-grid {
-        grid-template-columns: 1fr; /* Stacks image on top of text */
-        gap: 40px;
-        padding: 40px;
-    }
-
-    .about-image-container {
-        max-width: 200px; /* Controls image size on mobile */
-        margin: 0 auto; /* Centers the image */
-    }
-
-    .about-text-container h2 {
+    .profile-section {
+        flex-direction: column;
+        align-items: center;
         text-align: center;
+        gap: 30px;
+    }
+
+    .logo-wrapper {
+        width: 140px;
+        height: 140px;
+    }
+
+    .about-card h2::after {
+        left: 50%;
+        transform: translateX(-50%); /* 手机端标题下划线居中 */
+    }
+
+    .about-card p {
+        text-align: left; /* 手机端回左对齐，避免字间距过大 */
     }
 }

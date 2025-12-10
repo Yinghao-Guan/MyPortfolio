@@ -1,174 +1,248 @@
-/* css/common.css */
+/* css/common.css - V3.0 Final (Responsive Navigation & Footer) */
 
-/* 1. 引入高级字体: Lora (标题) 和 Inter (正文) */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Lora:ital,wght@0,600;0,700;1,400&display=swap');
+/* 1. 引入高级字体 */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap');
 
-/* 2. 定义全局变量 (默认浅色模式) */
 :root {
-    /* 核心色板 */
-    --primary-color: #002FA7;       /* 你的经典深蓝 */
-    --accent-color: #002FA7;        /* 强调色 */
-
-    /* 背景体系 */
-    --background-color: #F7F7F5;    /* 网页背景 (米白) */
-    --card-bg: #FFFFFF;             /* 卡片背景 (纯白) */
-
-    /* 文字体系 */
-    --text-color: #1E1E1E;          /* 主要文字 */
-    --text-muted: #6c757d;          /* 次要文字 (日期/地点) */
-
-    /* 装饰体系 */
-    --shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-    --border-radius: 8px;
-
-    /* 字体体系 */
-    --font-heading: 'Lora', serif;  /* 标题用衬线体 */
-    --font-body: 'Inter', sans-serif; /* 正文用无衬线体 */
+    /* --- ☀️ 默认浅色模式 --- */
+    --bg-body: #F7F7F5;
+    --bg-card: #FFFFFF;
+    --text-main: #1E1E1E;
+    --text-muted: #666666;
+    --accent-color: #002FA7;
+    --accent-glow: rgba(0, 47, 167, 0.15);
+    --nav-bg: rgba(247, 247, 245, 0.85);
+    --nav-height: 80px;
 }
 
-/* 3. 深色模式适配 (Dark Mode) */
+/* --- 🌙 深色模式 --- */
 @media (prefers-color-scheme: dark) {
     :root {
-        --primary-color: #64ffda;      /* 极客绿/青 (深色背景下更亮眼) */
-        --accent-color: #64ffda;
-
-        --background-color: #0a192f;   /* 深海军蓝背景 */
-        --card-bg: #112240;            /* 深色卡片背景 */
-
-        --text-color: #ccd6f6;         /* 浅灰蓝文字 */
-        --text-muted: #8892b0;         /* 暗灰文字 */
-
-        --shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
+        --bg-body: #0f172a;
+        --bg-card: #1e293b;
+        --text-main: #e2e8f0;
+        --text-muted: #94a3b8;
+        --accent-color: #38bdf8;
+        --accent-glow: rgba(56, 189, 248, 0.5);
+        --nav-bg: rgba(15, 23, 42, 0.95);
     }
 }
 
 /* 基础重置 */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    overflow-x: hidden; /* 防止移动端菜单滑出时横向滚动 */
 }
 
-html, body {
-    font-family: var(--font-body); /* 应用新字体 */
-    background-color: var(--background-color);
-    color: var(--text-color);
-    line-height: 1.6; /* 增加行高，提升阅读体验 */
-    transition: background-color 0.3s ease, color 0.3s ease; /* 模式切换时的平滑过渡 */
-}
-
-/* 标题通用样式 */
-h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-heading); /* 标题应用衬线体 */
+/* 字体排印 */
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
     font-weight: 700;
-    color: var(--text-color); /* 确保标题颜色跟随主题 */
+    line-height: 1.2;
+    color: var(--text-main);
 }
 
-/* Navigation Bar */
+a { text-decoration: none; color: var(--text-main); transition: all 0.3s ease; }
+
+/* =================================================================== */
+/* 导航栏 (Navbar) - 桌面 + 移动端逻辑 */
+/* =================================================================== */
+
 .navbar {
     position: fixed;
     top: 0;
     width: 100%;
+    height: var(--nav-height);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 3rem;
-    background-color: var(--background-color); /* 使用变量 */
-    /* 增加一个磨砂玻璃效果 (可选，看起来更高级) */
-    backdrop-filter: blur(10px);
-    background-color: rgba(var(--background-color), 0.85);
+    padding: 0 5%;
+    background: var(--nav-bg);
+    backdrop-filter: blur(12px);
     z-index: 1000;
-    transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(0,0,0,0.03);
 }
+
+@media (prefers-color-scheme: dark) { .navbar { border-bottom-color: rgba(255,255,255,0.03); } }
 
 .navbar-brand {
-    font-family: var(--font-heading); /* Logo 也用衬线体 */
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
     font-weight: 700;
-    font-size: 1.4rem;
-    text-decoration: none;
-    color: var(--text-color);
+    z-index: 1001; /* 保证 Logo 在菜单之上 */
 }
 
+/* --- 桌面端菜单 --- */
 .nav-links {
-    list-style: none;
     display: flex;
-    gap: 2rem;
+    gap: 2.5rem;
+    list-style: none;
 }
 
 .nav-links a {
-    text-decoration: none;
-    color: var(--text-color); /* 链接颜色跟随主题 */
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 500;
-    transition: color 0.3s ease-in-out;
+    color: var(--text-muted);
+}
+.nav-links a:hover, .nav-links a.active { color: var(--accent-color); }
+
+/* --- 汉堡包按钮 (默认隐藏) --- */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+    flex-direction: column;
+    gap: 6px;
+    z-index: 1001; /* 保证按钮在菜单之上 */
 }
 
-.nav-links a:hover, .nav-links a.active {
-    color: var(--primary-color);
+.hamburger .bar {
+    width: 25px;
+    height: 2px;
+    background-color: var(--text-main);
+    border-radius: 2px;
+    transition: all 0.3s ease;
 }
 
-/* Footer */
+/* =================================================================== */
+/* 页脚 (Footer) */
+/* =================================================================== */
+
 .footer {
+    padding: 2rem 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 3rem 3rem; /* 增加一点留白 */
-    background-color: var(--background-color);
+    background-color: transparent;
+    width: 100%;
+    margin-top: auto;
 }
 
-.footer .copyright {
-    font-size: 0.9rem;
-    color: var(--text-muted);
-}
+.copyright { color: var(--text-muted); font-size: 0.9rem; }
 
 .footer .social-icons {
-    display: flex;          /* 找回 Flex 布局 */
-    gap: 1.5rem;             /* 关键：控制图标和邮箱之间的间距 (原为1.5rem，微调大一点更不挤) */
-    align-items: center;    /* 垂直居中对齐 */
+    display: flex;
+    gap: 2rem;
+    align-items: center;
 }
 
-.footer-email-link {
-    font-size: 0.9rem;
-    color: var(--text-color);
-    text-decoration: none;
-    opacity: 0.8;
-    transition: all 0.3s ease-in-out;
-}
-
-.footer-email-link:hover {
-    color: var(--primary-color);
-    opacity: 1;
-}
-
-.footer .social-icons a {
-    color: var(--text-color);
-    opacity: 0.8;
-    transition: color 0.3s ease-in-out, transform 0.2s ease;
-}
-
-.footer .social-icons a:hover {
-    color: var(--primary-color);
-    transform: translateY(-3px); /* 小小的上浮动画 */
-    opacity: 1;
-}
-
+/* 图标样式 */
 .footer .social-icons svg {
-    width: 24px;
-    height: 24px;
-    fill: currentColor; /* 让 SVG 颜色自动跟随文字颜色 */
+    width: 20px; height: 20px;
+    fill: var(--text-muted);
+    transition: all 0.3s ease;
+}
+.footer .social-icons a:hover svg {
+    fill: var(--accent-color);
+    transform: translateY(-3px);
 }
 
-/* Responsive Adjustments */
+/* Email 链接逻辑 */
+.footer-email-link {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+    display: block; /* 桌面端显示文字 */
+}
+.footer-email-link:hover { color: var(--accent-color); }
+
+.mobile-email-icon {
+    display: none; /* 桌面端隐藏图标 */
+}
+
+
+/* =================================================================== */
+/* 📱 移动端适配 (Max-Width 768px) */
+/* =================================================================== */
+
 @media (max-width: 768px) {
-    .navbar {
-        padding: 1rem 1.5rem;
-        flex-direction: column;
-        gap: 1rem;
+    .navbar { padding: 0 1.5rem; }
+
+    /* --- 1. 显示汉堡包 --- */
+    .hamburger {
+        display: flex;
+        margin-left: auto;
     }
+
+    /* --- 2. 改造导航菜单为全屏覆盖层 --- */
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%; /* 默认藏在屏幕右侧 */
+        width: 100%;
+        height: 100vh;
+        background-color: var(--bg-body);
+
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+
+        transition: right 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+        padding-top: 60px; /* 避开顶部 */
+    }
+
+    /* 激活状态：滑出来 */
+    .nav-links.nav-active {
+        right: 0;
+    }
+
+    .nav-links li {
+        opacity: 0; /* 默认隐藏，等待动画 */
+        transform: translateY(20px);
+        transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+
+    .nav-links.nav-active li {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .nav-links a {
+        font-size: 1.5rem; /* 手机上字大一点 */
+        font-family: 'Playfair Display', serif;
+    }
+
+    /* --- 3. 汉堡包变成 X 动画 --- */
+    .hamburger.toggle .bar:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    .hamburger.toggle .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.toggle .bar:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    /* --- 4. Footer 调整 --- */
     .footer {
         flex-direction: column;
         gap: 1.5rem;
-        padding: 2rem 1.5rem;
+        padding-bottom: 3rem;
         text-align: center;
     }
+
+    /* 调整顺序：图标在上 (Order 1)，版权在下 (Order 2) */
+    .footer .social-icons { order: 1; gap: 2.5rem; }
+    .footer .copyright { order: 2; }
+
+    /* 切换 Email 显示模式 */
+    .footer-email-link { display: none; } /* 隐藏文字 */
+    .mobile-email-icon { display: block; } /* 显示图标 */
+}
+
+/* 全局动画定义 */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
 }
