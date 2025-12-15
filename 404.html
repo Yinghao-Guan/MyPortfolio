@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404: Page Not Found | Peter Guan</title>
+    <link rel="icon" type="image/png" href="/assets/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+
+    <link rel="stylesheet" href="/css/common.css">
+
+    <style>
+        /* --- 404 页面专用样式 --- */
+        .error-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 80vh; /* 保证居中 */
+            text-align: center;
+            padding: 0 1.5rem;
+        }
+
+        .error-code {
+            font-family: 'Playfair Display', serif;
+            font-size: 8rem;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+            opacity: 0.1; /* 淡淡的背景字效果 */
+        }
+
+        .error-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .error-text {
+            max-width: 600px;
+            margin-bottom: 3rem;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .choice-container {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        /* 按钮通用样式复用 btn，这里微调 */
+        .btn-404 {
+            padding: 0.8rem 2rem;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        /* 选项 A: 回家 (复用你现有的风格) */
+        .btn-home {
+            background-color: var(--text-main);
+            color: var(--bg-body);
+        }
+        .btn-home:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        /* 选项 B: 兔子洞 (MyDev 风格) */
+        .btn-rabbit {
+            background-color: transparent;
+            color: #22c55e; /* Matrix Green */
+            border-color: #22c55e;
+            font-family: 'Courier New', monospace; /* 代码字体 */
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-rabbit:hover {
+            background-color: rgba(0, 255, 65, 0.1);
+            box-shadow: 0 0 15px rgba(0, 255, 65, 0.4);
+            transform: translateY(-2px);
+        }
+
+        /* 移动端适配 */
+        @media (max-width: 768px) {
+            .error-code { font-size: 5rem; }
+            .error-title { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="navbar">
+    <a href="/index.html" class="navbar-brand">Peter Guan.</a>
+</header>
+
+<main class="error-container">
+    <div class="error-code">404</div>
+    <h1 class="error-title">Lost in the Void?</h1>
+
+    <p class="error-text">
+        The page you are looking for doesn't exist. You have reached a crossroads. <br>
+        You can return to the safety of the known world, or you can see how deep the rabbit hole goes.
+    </p>
+
+    <div class="choice-container">
+        <a href="/index.html" class="btn-404 btn-home">
+            &larr; Return to Safety
+        </a>
+
+        <a href="https://peterguan.dev" class="btn-404 btn-rabbit" target="_blank">
+            >_ Enter the Rabbit Hole
+        </a>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="copyright">
+        © 2025 Peter Guan.
+    </div>
+</footer>
+
+</body>
+</html>
