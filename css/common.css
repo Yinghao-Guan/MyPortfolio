@@ -13,6 +13,7 @@
     --accent-glow: rgba(0, 47, 167, 0.15);
     --nav-bg: rgba(247, 247, 245, 0.85);
     --nav-height: 80px;
+    --dev-green: #22c55e;
 }
 
 /* --- 🌙 深色模式 --- */
@@ -145,6 +146,10 @@ a { text-decoration: none; color: var(--text-main); transition: all 0.3s ease; }
 .footer .social-icons a:hover svg {
     fill: var(--accent-color);
     transform: translateY(-3px);
+}
+
+.footer .social-icons .dev-mode-icon:hover svg {
+    fill: var(--dev-green) !important;
 }
 
 /* Email 链接逻辑 */
