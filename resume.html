@@ -9,6 +9,8 @@
     <link rel="shortcut icon" href="/assets/favicon.ico" />
     <link rel="stylesheet" href="/css/common.css">
     <link rel="stylesheet" href="/css/resume.css">
+
+    <meta name="color-scheme" content="light dark">
 </head>
 <body>
 
@@ -246,7 +248,7 @@
 <script>
     // --- 导航栏加载完成后的逻辑 ---
 
-    // A. 高亮当前页面
+    // 高亮当前页面
     const path = window.location.pathname;
     const navLinks = document.querySelectorAll('.nav-links a');
     navLinks.forEach(link => {
@@ -256,7 +258,7 @@
         }
     });
 
-    // B. 汉堡菜单逻辑 (Mobile Menu)
+    // 汉堡菜单逻辑 (Mobile Menu)
     const burger = document.querySelector('.hamburger');
     const nav = document.querySelector('.nav-links');
     const navItems = document.querySelectorAll('.nav-links li');

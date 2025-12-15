@@ -1,20 +1,15 @@
-/* css/resume.css - V2.0 (Web + Print Ready) */
-
-/* =================================================================== */
-/* 🌐 1. Web 视图样式 (屏幕显示) */
-/* =================================================================== */
-
+/* Web 视图样式 (屏幕显示) */
 /* 页面容器 */
 .resume-bg-container {
     /* 移除背景色，直接使用 body 的背景 */
     background-color: transparent;
-    padding-top: var(--nav-height); /* 给固定导航栏留位 */
+    padding-top: var(--nav-height);
     padding-bottom: 60px;
     min-height: 100vh;
 }
 
 .resume-container {
-    max-width: 900px; /* 简历稍微窄一点，阅读体验更好 */
+    max-width: 900px;
     margin: 0 auto;
     padding: 0 40px;
 }
@@ -55,11 +50,11 @@
     margin-bottom: 30px;
     margin-top: 60px; /* 板块间距 */
 
-    border-bottom: 2px solid rgba(0,0,0,0.05); /* 浅浅的分隔线 */
+    border-bottom: 2px solid rgba(0,0,0,0.05);
     padding-bottom: 10px;
 }
 
-/* 深色模式下的分隔线微调 */
+/* 深色模式 */
 @media (prefers-color-scheme: dark) {
     .experience-header { border-bottom-color: rgba(255,255,255,0.05); }
 }
@@ -94,8 +89,8 @@
     background-color: var(--bg-card);
     padding: 35px;
     border-radius: var(--radius, 12px);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02); /* 默认极浅阴影 */
-    border: 1px solid rgba(0,0,0,0.03); /* 极细边框增加质感 */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(0,0,0,0.03);
 
     display: flex;
     gap: 40px;
@@ -104,7 +99,7 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* 深色模式边框微调 */
+/* 深色模式边框 */
 @media (prefers-color-scheme: dark) {
     .experience-card, .skill-card { border-color: rgba(255,255,255,0.05); }
 }
@@ -119,7 +114,7 @@
 .experience-details {
     flex-basis: 220px;
     flex-shrink: 0;
-    border-right: 1px solid rgba(0,0,0,0.05); /* 竖线分隔 */
+    border-right: 1px solid rgba(0,0,0,0.05);
     padding-right: 20px;
 }
 @media (prefers-color-scheme: dark) {
@@ -184,13 +179,11 @@
 }
 
 
-/* =================================================================== */
-/* 🖨️ 2. Print 视图样式 (Ctrl + P 专用) */
-/* =================================================================== */
+/* Print 视图样式 (Ctrl + P) */
 
 @media print {
     @page {
-        margin: 0.8cm; /* 稍微减小页边距，利用更多空间 */
+        margin: 0.8cm;
         size: auto;
     }
 
@@ -212,7 +205,7 @@
 
     /* --- 标题区域 --- */
     .resume-main-header {
-        margin: 0 0 10px 0 !important; /* 减小头部下方间距 */
+        margin: 0 0 10px 0 !important;
         text-align: left !important;
         justify-content: flex-start !important;
         border-bottom: 2px solid black;
@@ -231,7 +224,7 @@
 
     /* --- 板块标题 (Education, Experience...) --- */
     .experience-header {
-        margin-top: 12px !important; /* 稍微拉近板块间距 */
+        margin-top: 12px !important;
         margin-bottom: 6px !important;
         border-bottom: 1px solid #333 !important;
         padding-bottom: 2px;
@@ -252,7 +245,6 @@
         border: none !important;
         padding: 0 !important;
 
-        /* 关键修改：大幅减小卡片之间的间距，让它们看起来像一个整体列表 */
         margin-bottom: 6px !important;
 
         display: flex !important;
@@ -282,7 +274,7 @@
     .experience-description ul {
         margin-top: 0 !important;
         padding-top: 0 !important;
-        margin-bottom: 3px !important; /* 段落间只有微小间距 */
+        margin-bottom: 3px !important;
     }
 
     .experience-description ul {
@@ -291,7 +283,7 @@
 
     .experience-description li {
         color: #000 !important;
-        line-height: 1.45; /* 增加行距，让文字不那么挤，视觉上“撑开”同一块内容 */
+        line-height: 1.45;
         margin-bottom: 1px !important;
     }
 

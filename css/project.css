@@ -1,9 +1,4 @@
-/* css/project.css - V5.1 (Masonry + Solid Buttons) */
-
-/* =================================================================== */
 /* 页面容器 */
-/* =================================================================== */
-
 .page-bg-container {
     background-color: transparent;
     padding-top: var(--nav-height);
@@ -17,9 +12,7 @@
     padding: 0 40px;
 }
 
-/* =================================================================== */
-/* 头部区域 */
-/* =================================================================== */
+/* Header */
 
 .project-main-header {
     text-align: center;
@@ -59,22 +52,16 @@
     color: var(--text-muted);
 }
 
-/* =================================================================== */
 /* 瀑布流布局 (Masonry Layout) */
-/* =================================================================== */
-
 .project-grid {
-    /* 关键：使用 CSS Columns 而不是 Grid */
     column-count: 2;
-    column-gap: 40px; /* 列与列之间的间距 */
+    column-gap: 40px;
 }
 
 .project-card {
-    /* 必须：防止卡片被分割到两列 */
     break-inside: avoid;
     -webkit-column-break-inside: avoid;
 
-    /* 必须：在瀑布流中，垂直间距用 margin 控制 */
     margin-bottom: 40px;
 
     display: flex;
@@ -94,7 +81,7 @@
     animation: fadeUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
-/* 深色模式适配 */
+/* 深色模式 */
 @media (prefers-color-scheme: dark) {
     .project-card { border-color: rgba(255,255,255,0.05); }
 }
@@ -196,7 +183,7 @@
     gap: 1rem;
 }
 
-/* 基础按钮 (默认是空心 Ghost Button) */
+/* 基础按钮 */
 .btn {
     display: inline-block;
     padding: 10px 24px;
@@ -220,7 +207,7 @@
     box-shadow: 0 8px 20px var(--accent-glow);
 }
 
-/* === 新增：实心按钮 (Primary Action) === */
+/* === 实心按钮 (Primary Action) === */
 .btn.btn-solid {
     background-color: var(--accent-color);
     color: #FFFFFF !important;
@@ -228,22 +215,20 @@
 }
 
 .btn.btn-solid:hover {
-    background-color: #002387; /* 悬停时加深一点 */
+    background-color: #002387;
     border-color: #002387;
     color: #FFFFFF !important;
     transform: translateY(-2px);
     box-shadow: 0 8px 20px var(--accent-glow);
 }
 
-/* =================================================================== */
-/* 响应式：手机端 */
-/* =================================================================== */
+/* 响应式移动端 */
 
 @media (max-width: 900px) {
     .page-container { padding: 0 20px; }
 
     .project-grid {
-        column-count: 1; /* 手机上变回单列 */
+        column-count: 1;
     }
 
     .project-image-content { height: 220px; }

@@ -1,26 +1,18 @@
-/* css/about.css - V2.0 */
-
-/* =================================================================== */
 /* 页面容器 */
-/* =================================================================== */
-
 .page-bg-container {
-    background-color: transparent; /* 背景交给 body */
+    background-color: transparent;
     padding-top: var(--nav-height);
     padding-bottom: 80px;
     min-height: 100vh;
 }
 
 .page-container {
-    max-width: 900px; /* 限制宽度，提升阅读舒适度 */
+    max-width: 900px;
     margin: 0 auto;
     padding: 0 40px;
 }
 
-/* =================================================================== */
-/* 头部区域 */
-/* =================================================================== */
-
+/* header */
 .about-main-header {
     text-align: center;
     margin-top: 60px;
@@ -51,21 +43,17 @@
     font-weight: 700;
 }
 
-/* =================================================================== */
 /* 关于卡片 (About Cards) */
-/* =================================================================== */
-
 .about-grid {
     display: flex;
     flex-direction: column;
-    gap: 40px; /* 卡片之间的间距 */
+    gap: 40px;
 }
 
 .about-card {
     background-color: var(--bg-card);
     border-radius: var(--radius, 12px);
 
-    /* 核心质感：边框 + 阴影 */
     border: 1px solid rgba(0,0,0,0.05);
     box-shadow: var(--shadow);
 
@@ -88,7 +76,7 @@
     box-shadow: 0 15px 40px rgba(0,0,0,0.1);
 }
 
-/* --- 卡片 1: 个人简介 (图文并排) --- */
+/* --- 卡片 --- */
 .profile-section {
     display: flex;
     gap: 50px;
@@ -100,10 +88,10 @@
     flex-shrink: 0;
     width: 180px;
     height: 180px;
-    border-radius: 50%; /* 圆形头像风格 */
+    border-radius: 50%;
     padding: 5px;
-    border: 2px solid var(--accent-color); /* 强调色边框 */
-    box-shadow: 0 0 20px var(--accent-glow); /* 发光效果 */
+    border: 2px solid var(--accent-color);
+    box-shadow: 0 0 20px var(--accent-glow);
     background-color: var(--bg-body);
 
     display: flex;
@@ -149,21 +137,14 @@
     color: var(--text-main);
     opacity: 0.9;
     margin-bottom: 20px;
-    text-align: justify; /* 两端对齐，显得更整洁 */
+    text-align: justify;
 }
 
 .about-card p:last-child {
     margin-bottom: 0;
 }
 
-/* --- 卡片 2: 个人生活 (纯文本) --- */
-/* 复用上面的通用样式，不需要额外定义 */
-
-
-/* =================================================================== */
 /* 响应式调整 */
-/* =================================================================== */
-
 @media (max-width: 768px) {
     .page-container { padding: 0 20px; }
 
@@ -183,10 +164,10 @@
 
     .about-card h2::after {
         left: 50%;
-        transform: translateX(-50%); /* 手机端标题下划线居中 */
+        transform: translateX(-50%);
     }
 
     .about-card p {
-        text-align: left; /* 手机端回左对齐，避免字间距过大 */
+        text-align: left;
     }
 }

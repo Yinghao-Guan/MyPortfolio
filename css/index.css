@@ -1,33 +1,23 @@
-/* css/index.css - V2.1 */
-
-/* 容器布局：占据 Header 和 Footer 之间的剩余空间 */
 .main-content {
-    flex: 1; /* 关键：自动拉伸，填满屏幕 */
+    flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* 垂直居中 */
-    align-items: flex-start; /* 左对齐 */
+    justify-content: center;
+    align-items: flex-start;
 
-    padding: 0 15%; /* 左右留白 */
+    padding: 0 15%;
     width: 100%;
     max-width: 1400px;
     margin: 0 auto;
 
-    /* 稍微向上提一点，视觉重心更稳 */
     padding-top: var(--nav-height);
 }
 
 .main-content h1 {
     font-size: clamp(2.5rem, 5vw + 1rem, 5.5rem);
-
-    /* 同时也建议把行高改松一点，大字号行高太紧会压抑 */
     line-height: 1.1;
-
-    /* 稍微减少底部的 margin，因为字变小了，间距也要跟着变 */
     margin-bottom: 1.5rem;
-
     font-weight: 700;
-
     padding-bottom: 0.2em;
 
     /* 渐变文字效果 */
@@ -50,7 +40,7 @@
 
     font-size: clamp(1rem, 1vw + 0.5rem, 1.25rem);
 
-    line-height: 1.7; /* 增加行高，提升呼吸感 */
+    line-height: 1.7;
 }
 
 /* --- 按钮组 --- */
@@ -68,7 +58,7 @@
     border: 1px solid transparent;
 }
 
-/* 主按钮：浅色模式下是实心蓝，深色模式下是发光框 */
+/* 主按钮 */
 .btn:not(.btn-secondary) {
     background-color: transparent;
     border-color: var(--accent-color);
@@ -79,7 +69,7 @@
 
 .btn:not(.btn-secondary):hover {
     background-color: var(--accent-color);
-    color: var(--bg-card); /* 悬停后文字反白 (适配深浅模式) */
+    color: var(--bg-card);
     transform: translateY(-2px);
     box-shadow: 0 10px 25px var(--accent-glow);
 }
@@ -95,7 +85,7 @@
     transform: translateX(5px);
 }
 
-/* 针对深色模式的微调 (可选) */
+/* 深色模式 */
 @media (prefers-color-scheme: dark) {
     .main-content h1 {
         /* 深色模式下，渐变从白到灰 */
@@ -105,98 +95,85 @@
     }
 }
 
-/* --- 1. 定义动画关键帧 --- */
+/* --- 定义动画关键帧 --- */
 @keyframes fadeUp {
     from {
         opacity: 0;
-        transform: translateY(30px); /* 初始位置：向下偏移30像素 */
+        transform: translateY(30px);
     }
     to {
         opacity: 1;
-        transform: translateY(0);    /* 结束位置：回到原位 */
+        transform: translateY(0);
     }
 }
 
-/* --- 2. 应用动画到元素 --- */
+/* --- 应用动画到元素 --- */
 
-/* 标题：最先出现 */
+/* 标题 */
 .main-content h1 {
-    /* 保持你原有的样式 (font-size, gradient等) */
 
-    /* 新增动画属性 */
-    opacity: 0; /* 初始状态必须隐藏 */
+    opacity: 0;
     animation: fadeUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-    animation-delay: 0.1s; /* 稍微等一下再开始 */
+    animation-delay: 0.1s;
 }
 
-/* 副标题：延迟 0.2秒 */
+/* 副标题 */
 .main-content p {
-    /* 保持原有样式 */
-
     opacity: 0;
     animation: fadeUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-    animation-delay: 0.3s; /* 比标题晚一点 */
+    animation-delay: 0.3s;
 }
 
-/* 按钮组：延迟 0.4秒 */
+/* 按钮组 */
 .action-links {
-    /* 保持原有样式 */
-
     opacity: 0;
     animation: fadeUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-    animation-delay: 0.5s; /* 最后出现 */
+    animation-delay: 0.5s;
 }
 
 .hero-name {
-    font-family: 'Playfair Display', serif; /* 使用标题同款的高级衬线体 */
+    font-family: 'Playfair Display', serif;
     font-weight: 700;
-    /*font-size: 1.5em;*/
-    color: var(--text-main); /* 也就是深黑色/亮白色，而不是灰色的 muted */
+    color: var(--text-main);
     position: relative;
-    top: 3px; /* 微调垂直位置，因为它变大了 */
-    margin: 0 5px; /* 左右留点呼吸空间 */
+    top: 3px;
+    margin: 0 5px;
 
-    display: inline-block; /* 防止名字被切断 */
+    display: inline-block;
 
-    /* 流体字号: 保证名字在任何屏幕上都突出 */
+    /* 流体字号 */
     font-size: clamp(1.2rem, 2vw + 0.5rem, 1.8rem);
 }
 
 @media (max-width: 768px) {
     .main-content {
-        /* 1. 释放空间：手机屏窄，不要留 15% 那么宽的边距，改为 5% 或 1.5rem */
         padding-left: 1.5rem;
         padding-right: 1.5rem;
 
-        /* 可选：如果你希望移动端文字居中，可以加上这个 */
          align-items: center;
          text-align: center;
     }
 
-    /* 2. 按钮布局优化 */
+    /* 按钮布局优化 */
     .action-links {
-        /* 变为竖向排列，彻底解决空间不足问题 */
         flex-direction: column;
-        width: 100%;       /* 占满宽度 */
-        max-width: 400px;  /* 限制最大宽，防止在平板上太长 */
-        gap: 1rem;         /* 按钮之间的间距 */
+        width: 100%;
+        max-width: 400px;
+        gap: 1rem;
     }
 
     .btn {
-        width: 100%;         /* 按钮拉伸至全宽 */
-        text-align: center;  /* 文字居中 */
-        justify-content: center; /* 确保 flex 布局下内容居中 */
+        width: 100%;
+        text-align: center;
+        justify-content: center;
 
-        /* 3. 核心修复：强制文字不换行 */
+        /* 强制文字不换行 */
         white-space: nowrap;
 
-        /* 微调内边距，手机上不需要太厚 */
         padding: 0.9rem 1.5rem;
     }
 
-    /* 针对次级按钮的微调 (Read My Story ->) */
     .btn-secondary:hover {
-        /* 竖向排列时，向右移动的动画可能看起来怪怪的，可以改为不动或微调 */
         transform: translateX(3px);
     }
 }

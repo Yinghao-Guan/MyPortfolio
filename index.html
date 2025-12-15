@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/css/common.css">
 
+    <meta name="color-scheme" content="light dark">
+
     <meta name="description" content="Peter Guan is an HCI Researcher and Full Stack Developer based in Los Angeles. Specializing in Web3, AI, and Human-Centric Design.">
     <meta name="keywords" content="Peter Guan, 关英豪, HCI Researcher, Full Stack Developer, Web3, AI, Computer Science, Portfolio, UCLA, Edinburgh">
     <meta name="author" content="Peter Guan">
@@ -119,9 +121,7 @@
 </footer>
 
 <script>
-    // --- 导航栏加载完成后的逻辑 ---
-
-    // A. 高亮当前页面
+    // 高亮当前页面
     const path = window.location.pathname;
     const navLinks = document.querySelectorAll('.nav-links a');
     navLinks.forEach(link => {
@@ -131,7 +131,7 @@
         }
     });
 
-    // B. 汉堡菜单逻辑 (Mobile Menu)
+    // 汉堡菜单逻辑 (Mobile Menu)
     const burger = document.querySelector('.hamburger');
     const nav = document.querySelector('.nav-links');
     const navItems = document.querySelectorAll('.nav-links li');
