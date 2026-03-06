@@ -42,13 +42,13 @@
                 <h1>Selected Work</h1>
             </div>
             <p class="header-intro-text">
-                From AI-powered auditing tools to behavioural finance modelling and compiler engineering.
+                A curated selection of long-form projects spanning AI systems, research, product engineering, and programming language tooling.
             </p>
         </header>
 
         <div class="project-grid">
 
-            <article class="project-card" style="animation-delay: 0.2s;">
+            <article class="project-card" style="animation-delay: 0.1s;">
                 <div class="project-image-content project-image-contain">
                     <img src="/img/veru_demo.gif" alt="Veru AI Interface Demo">
                 </div>
@@ -62,10 +62,10 @@
                         </div>
                     </div>
                     <p class="project-description">
-                        An AI-powered tool designed to detect "hallucinations" in academic writing by cross-referencing citations against <strong>OpenAlex</strong> (250M+ papers).
+                        An AI-powered tool designed to detect hallucinations in academic writing by cross-referencing generated claims against scholarly sources at scale.
                         <br><br>
-                        Engineered a <strong>Next.js 14</strong> frontend and <strong>FastAPI</strong> backend. Features include a multi-tier verification system (OpenAlex, Semantic Scholar, Google Grounding) and a semantic auditor powered by <strong>Gemini 2.0 Flash</strong>. Served 100+ users in its first week.
-                        <br><br><strong>Technologies:</strong> Next.js, FastAPI, Python, Tailwind, Google Gemini API
+                        Engineered a production full-stack system with <strong>Next.js 14</strong> and <strong>FastAPI</strong>, integrating <strong>Gemini 2.0 Flash</strong> and a multi-layer validation pipeline across <strong>OpenAlex</strong>, Semantic Scholar, and Google Grounding. Launched to production and served 100+ users in its first week.
+                        <br><br><strong>Technologies:</strong> Next.js, FastAPI, Python, Tailwind, Gemini API, OpenAlex
                     </p>
                     <div class="action-links">
                         <a href="https://veru.app" class="btn btn-solid" target="_blank">Live Demo</a>
@@ -74,7 +74,73 @@
                 </div>
             </article>
 
-            <article class="project-card" style="animation-delay: 0.1s;">
+            <article class="project-card" style="animation-delay: 0.2s;">
+                <div class="project-text-content">
+                    <div class="project-heading">
+                        <div class="title-vertical-bar"></div>
+                        <div class="title-text-group">
+                            <h2>UCLA HCI Research: Trust in XAI</h2>
+                            <p class="project-role">Lead Researcher</p>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        A research initiative investigating how <strong>eXplainable AI (XAI)</strong> influences user trust, empathy, and agency in emotional support LLMs.
+                        <br><br>
+                        Designed and built a custom <strong>A/B testing platform</strong> to compare baseline conversational models with systems augmented by sentiment analysis and transparency mechanisms. The project studies how explanation and user correction can reshape trust during high-stakes human-AI interaction.
+                        <br><br><strong>Fields:</strong> HCI, Explainable AI, LLM Evaluation, User-Centred Design
+                    </p>
+                    <div class="action-links">
+                        <a href="https://github.com/Yinghao-Guan/HCI_Chatbot_Prototype.git" class="btn" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="project-card" style="animation-delay: 0.35s;">
+                <div class="project-text-content">
+                    <div class="project-heading">
+                        <div class="title-vertical-bar"></div>
+                        <div class="title-text-group">
+                            <h2>Behavioural Modelling of Trading</h2>
+                            <p class="project-role">Quantitative Research / Data Systems</p>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        A quantitative study modeling how psychological biases influence excessive trading behavior in financial markets.
+                        <br><br>
+                        Designed a cross-language data pipeline combining <strong>Python</strong> (data engineering, preprocessing) and <strong>R</strong> (PLS-SEM modeling) via <strong>rpy2</strong>, enabling statistical validation of behavioral hypotheses. The study demonstrates that <strong>Fear of Missing Out (FoMO)</strong> is a primary driver of irrational trading patterns.
+                        <br><br><strong>Technologies:</strong> Python, Pandas, R, PLS-SEM, rpy2, Statistical Modeling
+                    </p>
+                    <div class="action-links">
+                        <a href="https://github.com/Yinghao-Guan/DeepSeek-Analysis.git" class="btn" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="project-card" style="animation-delay: 0.3s;">
+                <div class="project-image-content project-image-contain">
+                    <img src="/img/Demo.png" alt="Academic DSL and IDE Interface">
+                </div>
+                <div class="project-text-content">
+                    <div class="project-heading">
+                        <div class="title-vertical-bar"></div>
+                        <div class="title-text-group">
+                            <h2>Acadown: Academic DSL & IDE Ecosystem</h2>
+                            <p class="project-role">Programming Languages / Tooling Engineer</p>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        A custom academic markup language and IDE ecosystem designed to bridge Markdown-like ergonomics with structured publishing workflows.
+                        <br><br>
+                        Built the compiler frontend with <strong>ANTLR4</strong>, using AST traversal and the Visitor pattern to transform source documents into publishable representations. Developed the editing environment around extensible tooling, robust state management, and future-facing document compilation pipelines.
+                        <br><br><strong>Technologies:</strong> Java, ANTLR4, JavaFX, MVVM, AST Design, Compiler Engineering
+                    </p>
+                    <div class="action-links">
+                        <a href="https://github.com/Yinghao-Guan/MyMD" class="btn" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="project-card" style="animation-delay: 0.4s;">
                 <div class="project-image-content project-image-contain">
                     <img src="/img/mydev_preview.png" alt="PeterGuan.dev Terminal Interface" onerror="this.style.display='none'">
                 </div>
@@ -88,9 +154,9 @@
                         </div>
                     </div>
                     <p class="project-description">
-                        An immersive, terminal-themed portfolio designed exclusively for developers and tech enthusiasts.
+                        An experimental portfolio environment and personal web sandbox built for interaction design, frontend engineering, and developer-facing UX exploration.
                         <br><br>
-                        Pushing the boundaries of <strong>Next.js 15</strong> and <strong>React 19</strong>, this project features a fully interactive command-line interface (CLI), real-time "Matrix" rain simulations via Canvas, and hidden easter eggs. It serves as a living laboratory for my experiments in UI engineering and performance optimization.
+                        Built with <strong>Next.js 15</strong> and <strong>React 19</strong>, the site features a command-line-inspired interface, interactive motion systems, and canvas-driven visual effects. It functions as a living laboratory for interface experimentation, performance tuning, and product storytelling on the web.
                         <br><br><strong>Technologies:</strong> Next.js 15, React 19, TypeScript, Framer Motion, Canvas API
                     </p>
                     <div class="action-links">
@@ -100,7 +166,143 @@
                 </div>
             </article>
 
+        </div>
+
+        <header class="project-section" style="margin-top: 100px; margin-bottom: 70px;">
+            <div class="header-title-wrapper">
+                <span class="title-decorator"></span>
+                <h1>Selected Hackathon Projects</h1>
+            </div>
+            <p class="header-intro-text">
+                Rapidly built systems under real-world constraints, spanning multimodal AI, real-time pipelines, assistive technology, and product prototyping.
+            </p>
+        </header>
+
+        <div class="project-grid">
+
+            <!-- Marketeer -->
+            <article class="project-card" style="animation-delay: 0.1s;">
+                <div class="project-image-content project-image-contain">
+                    <img src="/img/marketeer.png" alt="Marketeer Interface" onerror="this.style.display='none'">
+                </div>
+
+                <div class="project-text-content">
+                    <div class="project-heading">
+                        <div class="title-vertical-bar"></div>
+                        <div class="title-text-group">
+                            <h2>Marketeer: AI Campaign Generator</h2>
+                            <p class="project-role">
+                                Full Stack / Systems Engineer · Runner-up
+                                <br>
+                                <span class="project-meta">Build with Gemini Hackathon (UCLA × Google DeepMind)</span>
+                            </p>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Built in a high-intensity hackathon setting, Marketeer is an end-to-end AI marketing system generating full campaigns from a single prompt.
+                        <br><br>
+                        Designed an asynchronous multi-stage pipeline coordinating <strong>5+ Gemini models</strong> to enable parallel asset generation. Implemented a browser-first workflow with <strong>IndexedDB</strong> persistence and <strong>FFmpeg WASM</strong>-based client-side media merging for fully in-browser production.
+                        <br><br><strong>Technologies:</strong> Gemini API, TypeScript, IndexedDB, FFmpeg WASM, Async Pipelines
+                    </p>
+                    <div class="action-links">
+                        <a href="https://www.kaggle.com/competitions/ucla-gemini-api-hackathon/writeups/marketeer" class="btn btn-solid" target="_blank">View Kaggle</a>
+                        <a href="https://github.com/Yinghao-Guan/Marketeer" class="btn" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Solaura -->
+            <article class="project-card" style="animation-delay: 0.2s;">
+                <div class="project-text-content">
+                    <div class="project-heading">
+                        <div class="title-vertical-bar"></div>
+                        <div class="title-text-group">
+                            <h2>Solaura: Spatial Perception Assistant</h2>
+                            <p class="project-role">
+                                iOS / Backend Engineer
+                                <br>
+                                <span class="project-meta">Hack for Humanity 2026, Santa Clara University</span>
+                            </p>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Built within a constrained hackathon timeframe, Solaura is a real-time assistive system designed to augment spatial awareness for visually impaired users.
+                        <br><br>
+                        Developed an <strong>iOS application</strong> using <strong>Swift</strong>, <strong>ARKit</strong>, and <strong>CoreML YOLOv8</strong> for low-latency perception. Engineered a <strong>Python backend</strong> for state synchronization and audio synthesis, integrating <strong>Gemini</strong> and <strong>ElevenLabs</strong> for multimodal feedback.
+                        <br><br><strong>Technologies:</strong> Swift, ARKit, CoreML, YOLOv8, Python, Gemini API, ElevenLabs
+                    </p>
+                    <div class="action-links">
+                        <a href="https://devpost.com/software/solaura-bouewf" class="btn btn-solid" target="_blank">View Devpost</a>
+                        <a href="https://github.com/Yinghao-Guan/solaura" class="btn" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Hackonomics -->
             <article class="project-card" style="animation-delay: 0.3s;">
+                <div class="project-image-content project-image-contain">
+                    <img src="/img/hackonomics.png" alt="Hackonomics Interface" onerror="this.style.display='none'">
+                </div>
+
+                <div class="project-text-content">
+                    <div class="project-heading">
+                        <div class="title-vertical-bar"></div>
+                        <div class="title-text-group">
+                            <h2>Hackonomics: Village Economy</h2>
+                            <p class="project-role">
+                                Game Systems / Full Stack Developer
+                                <br>
+                                <span class="project-meta">Hackonomics (Online Hackathon)</span>
+                            </p>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Developed in a hackathon setting, Hackonomics is an interactive economic simulation where players govern a village through cascading crises.
+                        <br><br>
+                        Built a custom macroeconomic simulation engine modeling <strong>GDP</strong>, <strong>CPI</strong>, unemployment, and dynamic event chains. Implemented bilingual narrative gameplay, persistent state management, achievement systems, and branching ideological endings without using an external game engine.
+                        <br><br><strong>Technologies:</strong> Next.js 16, React 19, TypeScript, Tailwind CSS, localStorage, Game Systems Design
+                    </p>
+                    <div class="action-links">
+                        <a href="https://hackonomics.vercel.app/" class="btn btn-solid" target="_blank">Live Demo</a>
+                        <a href="https://github.com/Yinghao-Guan/Hackonomics" class="btn" target="_blank">GitHub</a>
+                        <a href="https://devpost.com/software/fingame-gc6p7d" class="btn" target="_blank">Devpost</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Skillset LA -->
+            <article class="project-card" style="animation-delay: 0.4s;">
+                <div class="project-image-content project-image-contain">
+                    <img src="/img/skillset_LA.png" alt="Skillset LA Interface" onerror="this.style.display='none'">
+                </div>
+
+                <div class="project-text-content">
+                    <div class="project-heading">
+                        <div class="title-vertical-bar"></div>
+                        <div class="title-text-group">
+                            <h2>Skillset LA: AI Career Roadmap Builder</h2>
+                            <p class="project-role">
+                                Backend Engineer · Top 3 Overall
+                                <br>
+                                <span class="project-meta">Vision Hack (Los Angeles)</span>
+                            </p>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Built during a hackathon, Skillset LA generates personalized career roadmaps from user goals and background.
+                        <br><br>
+                        Engineered the backend system and integrated <strong>Gemini</strong> with external job-market data sources to transform fragmented inputs into structured, actionable development pathways.
+                        <br><br><strong>Technologies:</strong> Python, FastAPI, Gemini API, Backend Systems
+                    </p>
+                    <div class="action-links">
+                        <a href="https://devpost.com/software/skillset-la" class="btn btn-solid" target="_blank">View Devpost</a>
+                        <a href="https://github.com/Yinghao-Guan/VisionHack" class="btn" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Realibuddy -->
+            <article class="project-card" style="animation-delay: 0.5s;">
                 <div class="project-image-content project-image-contain">
                     <img src="/img/realibuddy_cover.png" alt="Realibuddy Interface" onerror="this.style.display='none'">
                 </div>
@@ -110,110 +312,22 @@
                         <div class="title-vertical-bar"></div>
                         <div class="title-text-group">
                             <h2>Realibuddy: Voice Fact-Checker</h2>
-                            <p class="project-role">Backend Lead (HackCC Winner)</p>
+                            <p class="project-role">
+                                Backend Lead · Best AI/ML Award
+                                <br>
+                                <span class="project-meta">HackCC, MiraCosta College, Oceanside, CA</span>
+                            </p>
                         </div>
                     </div>
                     <p class="project-description">
-                        Winner of the <strong>Best AI/ML Award</strong> (Top 1 out of 29 teams). A real-time conversational assistant that verifies spoken claims instantly.
+                        Built in a live hackathon environment, Realibuddy is a real-time assistant that verifies spoken claims during conversation.
                         <br><br>
-                        I architected the backend pipeline, integrating <strong>Deepgram</strong> for live transcription and <strong>Perplexity</strong> for grounded truth retrieval via WebSockets. The system achieved sub-second latency for real-time feedback.
-                        <br><br><strong>Technologies:</strong> Python, WebSockets, Deepgram ASR, Perplexity API
+                        Architected a low-latency backend pipeline integrating <strong>Deepgram ASR</strong> and retrieval systems via <strong>WebSockets</strong> to deliver grounded responses in real time.
+                        <br><br><strong>Technologies:</strong> Python, WebSockets, Deepgram, Real-Time Systems
                     </p>
                     <div class="action-links">
                         <a href="https://devpost.com/software/pavshock" class="btn btn-solid" target="_blank">View Devpost</a>
                         <a href="https://github.com/seanesla/Realibuddy" class="btn" target="_blank">GitHub</a>
-                    </div>
-                </div>
-            </article>
-
-            <article class="project-card" style="animation-delay: 0.4s;">
-                <div class="project-text-content">
-                    <div class="project-heading">
-                        <div class="title-vertical-bar"></div>
-                        <div class="title-text-group">
-                            <h2>UCLA HCI Research: Trust in XAI</h2>
-                            <p class="project-role">Lead Researcher</p>
-                        </div>
-                    </div>
-                    <p class="project-description">
-                        Investigating how <strong>eXplainable AI (XAI)</strong> influences user trust in emotional support LLMs.
-                        <br><br>
-                        Designed an <strong>A/B testing</strong> platform to compare "black-box" models vs. transparent models with sentiment analysis. The study explores how <strong>user agency</strong>—the ability to correct AI predictions—can repair interactional breakdowns.
-                        <br><br><strong>Fields:</strong> HCI, Explainable AI, LLMs, User-Centred Design
-                    </p>
-                    <div class="action-links">
-                        <a href="https://github.com/Yinghao-Guan/HCI_Chatbot_Prototype.git" class="btn" target="_blank">GitHub</a>
-                    </div>
-                </div>
-            </article>
-
-            <article class="project-card" style="animation-delay: 0.5s;">
-                <div class="project-text-content">
-                    <div class="project-heading">
-                        <div class="title-vertical-bar"></div>
-                        <div class="title-text-group">
-                            <h2>Behavioural Modelling of Trading</h2>
-                            <p class="project-role">Quant Analyst</p>
-                        </div>
-                    </div>
-                    <p class="project-description">
-                        Quantitatively modelled the impact of psychological biases (FoMO, Herding) on excessive trading.
-                        <br><br>
-                        Architected a hybrid pipeline using <strong>Python</strong> (pandas) for data engineering and <strong>R</strong> (via rpy2) for <strong>PLS-SEM modelling</strong>. Validated that FoMO is a primary predictor of irrational market behaviour.
-                        <br><br><strong>Technologies:</strong> Python, R, PLS-SEM, rpy2, Matplotlib
-                    </p>
-                    <div class="action-links">
-                        <a href="https://github.com/Yinghao-Guan/DeepSeek-Analysis.git" class="btn" target="_blank">GitHub</a>
-                    </div>
-                </div>
-            </article>
-
-            <article class="project-card" style="animation-delay: 0.6s;">
-                <div class="project-image-content project-image-contain">
-                    <img src="/img/Demo.png" alt="MyMD Interface">
-                </div>
-                <div class="project-text-content">
-                    <div class="project-heading">
-                        <div class="title-vertical-bar"></div>
-                        <div class="title-text-group">
-                            <h2>Custom Markup IDE & Compiler</h2>
-                            <p class="project-role">Software Engineer</p>
-                        </div>
-                    </div>
-                    <p class="project-description">
-                        A desktop IDE for a custom markup language that blends Markdown simplicity with LaTeX precision.
-                        <br><br>
-                        Features an <strong>ANTLR4</strong>-based compiler front-end and a <strong>JavaFX</strong> UI built on <strong>MVVM</strong> architecture. Uses the Visitor pattern to convert ASTs to Pandoc-compatible JSON for professional publishing.
-                        <br><br><strong>Technologies:</strong> Java, ANTLR4, JavaFX, MVVM, JUnit 5
-                    </p>
-                    <div class="action-links">
-                        <a href="https://github.com/Yinghao-Guan/MyMD" class="btn" target="_blank">GitHub</a>
-                    </div>
-                </div>
-            </article>
-
-            <article class="project-card" style="animation-delay: 0.55s;">
-                <div class="project-image-content project-image-contain" style="background-color: #F5F5F7;">
-                    <img src="/img/gradecalc_cover.png" alt="GradeCalc Interface" onerror="this.style.display='none'">
-                </div>
-
-                <div class="project-text-content">
-                    <div class="project-heading">
-                        <div class="title-vertical-bar"></div>
-                        <div class="title-text-group">
-                            <h2>GradeCalc: Statistical Planner</h2>
-                            <p class="project-role">Product Engineer / Designer</p>
-                        </div>
-                    </div>
-                    <p class="project-description">
-                        A "Micro-SaaS" built in <strong>4 hours</strong> to visualize academic goals.
-                        <br><br>
-                        Unlike traditional calculators, it employs <strong>Z-Score & Standard Deviation</strong> analysis to offer risk assessments on final exam targets. Features a modern <strong>Bento Grid</strong> UI, dark-pattern-free privacy (100% client-side), and custom i18n engine.
-                        <br><br><strong>Technologies:</strong> Vanilla JS (ES6+), CSS3 Variables, Statistical Algorithms
-                    </p>
-                    <div class="action-links">
-                        <a href="https://grade.peterguan.com" class="btn btn-solid" target="_blank">Try Live</a>
-                        <a href="https://github.com/Guaguaaaa/GradeCalc" class="btn" target="_blank">GitHub</a>
                     </div>
                 </div>
             </article>
@@ -256,37 +370,32 @@
 </footer>
 
 <script>
-    // --- 移动端汉堡菜单逻辑 ---
-    const burger = document.querySelector('.hamburger');
-    const nav = document.querySelector('.nav-links');
-    const navItems = document.querySelectorAll('.nav-links li');
+  const burger = document.querySelector('.hamburger');
+  const nav = document.querySelector('.nav-links');
+  const navItems = document.querySelectorAll('.nav-links li');
 
-    if (burger) {
-        burger.addEventListener('click', () => {
-            // 切换菜单显示
-            nav.classList.toggle('nav-active');
-            // 切换汉堡按钮动画 (变X)
-            burger.classList.toggle('toggle');
+  if (burger) {
+    burger.addEventListener('click', () => {
+      nav.classList.toggle('nav-active');
+      burger.classList.toggle('toggle');
 
-            // 列表项动画 (依次滑入)
-            navItems.forEach((link, index) => {
-                if (link.style.transitionDelay) {
-                    link.style.transitionDelay = '';
-                } else {
-                    link.style.transitionDelay = `${index * 0.1 + 0.1}s`;
-                }
-            });
-        });
+      navItems.forEach((link, index) => {
+        if (link.style.transitionDelay) {
+          link.style.transitionDelay = '';
+        } else {
+          link.style.transitionDelay = `${index * 0.1 + 0.1}s`;
+        }
+      });
+    });
 
-        // 点击链接后自动收起菜单
-        navItems.forEach(item => {
-            item.addEventListener('click', () => {
-                nav.classList.remove('nav-active');
-                burger.classList.remove('toggle');
-                navItems.forEach(link => link.style.transitionDelay = '');
-            });
-        });
-    }
+    navItems.forEach(item => {
+      item.addEventListener('click', () => {
+        nav.classList.remove('nav-active');
+        burger.classList.remove('toggle');
+        navItems.forEach(link => link.style.transitionDelay = '');
+      });
+    });
+  }
 </script>
 </body>
 </html>
