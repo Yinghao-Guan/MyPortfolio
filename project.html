@@ -180,39 +180,72 @@
 
         <div class="project-grid">
 
-            <!-- Marketeer -->
+            <!-- Doppel -->
             <article class="project-card" style="animation-delay: 0.1s;">
                 <div class="project-image-content project-image-contain">
-                    <img src="/img/marketeer.png" alt="Marketeer Interface" onerror="this.style.display='none'">
+                    <img src="/assets/doppel-medium.jpg" alt="Doppel Interface" onerror="this.style.display='none'">
                 </div>
 
                 <div class="project-text-content">
                     <div class="project-heading">
                         <div class="title-vertical-bar"></div>
                         <div class="title-text-group">
-                            <h2>Marketeer: AI Campaign Generator</h2>
+                            <h2>Doppel: Athletic Digital Twin</h2>
                             <p class="project-role">
-                                Full Stack / Systems Engineer · Runner-up
+                                Full Stack / ML Engineer · <span class="award-text">Best Sports &amp; Fitness Track Winner</span>
                                 <br>
-                                <span class="project-meta">Build with Gemini Hackathon (UCLA × Google DeepMind)</span>
+                                <span class="project-meta">BroncoHacks 2026</span>
                             </p>
                         </div>
                     </div>
                     <p class="project-description">
-                        Built in a high-intensity hackathon setting, Marketeer is an end-to-end AI marketing system generating full campaigns from a single prompt.
+                        Built for a live hackathon, Doppel is a performance modeling system that forecasts short-term athletic outcomes and turns verified training activity into on-chain achievements.
                         <br><br>
-                        Designed an asynchronous multi-stage pipeline coordinating <strong>5+ Gemini models</strong> to enable parallel asset generation. Implemented a browser-first workflow with <strong>IndexedDB</strong> persistence and <strong>FFmpeg WASM</strong>-based client-side media merging for fully in-browser production.
-                        <br><br><strong>Technologies:</strong> Gemini API, TypeScript, IndexedDB, FFmpeg WASM, Async Pipelines
+                        Trained a multi-output <strong>RandomForestRegressor</strong> on athlete data augmented with synthetic movement features to predict readiness, strength, endurance, and injury-risk percentiles. Engineered the <strong>FastAPI</strong> backend with <strong>SQLite</strong>, SHA-256 workout proof hashing, and badge eligibility logic, then authored a <strong>Rust + Anchor</strong> Solana program for immutable training proofs and live NFT badge minting on devnet.
+                        <br><br><strong>Technologies:</strong> FastAPI, SQLite, scikit-learn, RandomForest, Rust, Solana, Anchor
                     </p>
                     <div class="action-links">
-                        <a href="https://www.kaggle.com/competitions/ucla-gemini-api-hackathon/writeups/marketeer" class="btn btn-solid" target="_blank">View Kaggle</a>
-                        <a href="https://github.com/Yinghao-Guan/Marketeer" class="btn" target="_blank">GitHub</a>
+                        <a href="https://bronco-hacks-delta.vercel.app/" class="btn btn-solid" target="_blank">Live Demo</a>
+                        <a href="https://github.com/Yinghao-Guan/Doppel" class="btn" target="_blank">GitHub</a>
+                        <a href="https://devpost.com/software/doppel-13khzp" class="btn" target="_blank">Devpost</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Realibuddy -->
+            <article class="project-card" style="animation-delay: 0.6s;">
+                <div class="project-image-content project-image-contain">
+                    <img src="/img/realibuddy_cover.png" alt="Realibuddy Interface" onerror="this.style.display='none'">
+                </div>
+
+                <div class="project-text-content">
+                    <div class="project-heading">
+                        <div class="title-vertical-bar"></div>
+                        <div class="title-text-group">
+                            <h2>Realibuddy: Voice Fact-Checker</h2>
+                            <p class="project-role">
+                                Backend Lead · <span class="award-text">Best AI/ML Award</span>
+                                <br>
+                                <span class="project-meta">HackCC, MiraCosta College, Oceanside, CA</span>
+                            </p>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Built in a live hackathon environment, Realibuddy is a real-time assistant that verifies spoken claims during conversation.
+                        <br><br>
+                        Architected a low-latency backend pipeline integrating <strong>Deepgram ASR</strong> and retrieval systems via <strong>WebSockets</strong> to deliver grounded responses in real time.
+                        <br><br><strong>Technologies:</strong> Python, WebSockets, Deepgram, Real-Time Systems
+                    </p>
+                    <div class="action-links">
+                        <a href="https://www.peterguan.dev/projects?project=realibuddy&file=Live_Interface_v2" class="btn btn-solid" target="_blank">View Playground</a>
+                        <a href="https://github.com/seanesla/Realibuddy" class="btn" target="_blank">GitHub</a>
+                        <a href="https://devpost.com/software/pavshock" class="btn" target="_blank">Devpost</a>
                     </div>
                 </div>
             </article>
 
             <!-- Solaura -->
-            <article class="project-card" style="animation-delay: 0.2s;">
+            <article class="project-card" style="animation-delay: 0.3s;">
                 <div class="project-text-content">
                     <div class="project-heading">
                         <div class="title-vertical-bar"></div>
@@ -238,8 +271,72 @@
                 </div>
             </article>
 
+            <!-- Marketeer -->
+            <article class="project-card" style="animation-delay: 0.2s;">
+                <div class="project-image-content project-image-contain">
+                    <img src="/img/marketeer.png" alt="Marketeer Interface" onerror="this.style.display='none'">
+                </div>
+
+                <div class="project-text-content">
+                    <div class="project-heading">
+                        <div class="title-vertical-bar"></div>
+                        <div class="title-text-group">
+                            <h2>Marketeer: AI Campaign Generator</h2>
+                            <p class="project-role">
+                                Full Stack / Systems Engineer · <span class="award-text">Runner-up</span>
+                                <br>
+                                <span class="project-meta">Build with Gemini Hackathon (UCLA × Google DeepMind)</span>
+                            </p>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Built in a high-intensity hackathon setting, Marketeer is an end-to-end AI marketing system generating full campaigns from a single prompt.
+                        <br><br>
+                        Designed an asynchronous multi-stage pipeline coordinating <strong>5+ Gemini models</strong> to enable parallel asset generation. Implemented a browser-first workflow with <strong>IndexedDB</strong> persistence and <strong>FFmpeg WASM</strong>-based client-side media merging for fully in-browser production.
+                        <br><br><strong>Technologies:</strong> Gemini API, TypeScript, IndexedDB, FFmpeg WASM, Async Pipelines
+                    </p>
+                    <div class="action-links">
+                        <a href="https://marketeer-eight.vercel.app/" class="btn btn-solid" target="_blank">Live Demo</a>
+                        <a href="https://github.com/Yinghao-Guan/Marketeer" class="btn" target="_blank">GitHub</a>
+                        <a href="https://www.kaggle.com/competitions/ucla-gemini-api-hackathon/writeups/marketeer" class="btn" target="_blank">Kaggle</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Skillset LA -->
+            <article class="project-card" style="animation-delay: 0.5s;">
+                <div class="project-image-content project-image-contain">
+                    <img src="/img/skillset_LA.png" alt="Skillset LA Interface" onerror="this.style.display='none'">
+                </div>
+
+                <div class="project-text-content">
+                    <div class="project-heading">
+                        <div class="title-vertical-bar"></div>
+                        <div class="title-text-group">
+                            <h2>Skillset LA: AI Career Roadmap Builder</h2>
+                            <p class="project-role">
+                                Backend Engineer · <span class="award-text">Top 3 Overall</span>
+                                <br>
+                                <span class="project-meta">Vision Hack (Los Angeles)</span>
+                            </p>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Built during a hackathon, Skillset LA generates personalized career roadmaps from user goals and background.
+                        <br><br>
+                        Engineered the backend system and integrated <strong>Gemini</strong> with external job-market data sources to transform fragmented inputs into structured, actionable development pathways.
+                        <br><br><strong>Technologies:</strong> Python, FastAPI, Gemini API, Backend Systems
+                    </p>
+                    <div class="action-links">
+                        <a href="https://vision-hack-rouge.vercel.app/" class="btn btn-solid" target="_blank">Live Demo</a>
+                        <a href="https://github.com/Yinghao-Guan/VisionHack" class="btn" target="_blank">GitHub</a>
+                        <a href="https://devpost.com/software/skillset-la" class="btn" target="_blank">Devpost</a>
+                    </div>
+                </div>
+            </article>
+
             <!-- Hackonomics -->
-            <article class="project-card" style="animation-delay: 0.3s;">
+            <article class="project-card" style="animation-delay: 0.4s;">
                 <div class="project-image-content project-image-contain">
                     <img src="/img/hackonomics.png" alt="Hackonomics Interface" onerror="this.style.display='none'">
                 </div>
@@ -250,7 +347,7 @@
                         <div class="title-text-group">
                             <h2>Hackonomics: Village Economy</h2>
                             <p class="project-role">
-                                Game Systems / Full Stack Developer
+                                Game Systems / Full Stack Developer · <span class="award-text">Honorable Mention</span>
                                 <br>
                                 <span class="project-meta">Hackonomics (Online Hackathon)</span>
                             </p>
@@ -266,68 +363,6 @@
                         <a href="https://hackonomics.vercel.app/" class="btn btn-solid" target="_blank">Live Demo</a>
                         <a href="https://github.com/Yinghao-Guan/Hackonomics" class="btn" target="_blank">GitHub</a>
                         <a href="https://devpost.com/software/fingame-gc6p7d" class="btn" target="_blank">Devpost</a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Skillset LA -->
-            <article class="project-card" style="animation-delay: 0.4s;">
-                <div class="project-image-content project-image-contain">
-                    <img src="/img/skillset_LA.png" alt="Skillset LA Interface" onerror="this.style.display='none'">
-                </div>
-
-                <div class="project-text-content">
-                    <div class="project-heading">
-                        <div class="title-vertical-bar"></div>
-                        <div class="title-text-group">
-                            <h2>Skillset LA: AI Career Roadmap Builder</h2>
-                            <p class="project-role">
-                                Backend Engineer · Top 3 Overall
-                                <br>
-                                <span class="project-meta">Vision Hack (Los Angeles)</span>
-                            </p>
-                        </div>
-                    </div>
-                    <p class="project-description">
-                        Built during a hackathon, Skillset LA generates personalized career roadmaps from user goals and background.
-                        <br><br>
-                        Engineered the backend system and integrated <strong>Gemini</strong> with external job-market data sources to transform fragmented inputs into structured, actionable development pathways.
-                        <br><br><strong>Technologies:</strong> Python, FastAPI, Gemini API, Backend Systems
-                    </p>
-                    <div class="action-links">
-                        <a href="https://devpost.com/software/skillset-la" class="btn btn-solid" target="_blank">View Devpost</a>
-                        <a href="https://github.com/Yinghao-Guan/VisionHack" class="btn" target="_blank">GitHub</a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Realibuddy -->
-            <article class="project-card" style="animation-delay: 0.5s;">
-                <div class="project-image-content project-image-contain">
-                    <img src="/img/realibuddy_cover.png" alt="Realibuddy Interface" onerror="this.style.display='none'">
-                </div>
-
-                <div class="project-text-content">
-                    <div class="project-heading">
-                        <div class="title-vertical-bar"></div>
-                        <div class="title-text-group">
-                            <h2>Realibuddy: Voice Fact-Checker</h2>
-                            <p class="project-role">
-                                Backend Lead · Best AI/ML Award
-                                <br>
-                                <span class="project-meta">HackCC, MiraCosta College, Oceanside, CA</span>
-                            </p>
-                        </div>
-                    </div>
-                    <p class="project-description">
-                        Built in a live hackathon environment, Realibuddy is a real-time assistant that verifies spoken claims during conversation.
-                        <br><br>
-                        Architected a low-latency backend pipeline integrating <strong>Deepgram ASR</strong> and retrieval systems via <strong>WebSockets</strong> to deliver grounded responses in real time.
-                        <br><br><strong>Technologies:</strong> Python, WebSockets, Deepgram, Real-Time Systems
-                    </p>
-                    <div class="action-links">
-                        <a href="https://devpost.com/software/pavshock" class="btn btn-solid" target="_blank">View Devpost</a>
-                        <a href="https://github.com/seanesla/Realibuddy" class="btn" target="_blank">GitHub</a>
                     </div>
                 </div>
             </article>
